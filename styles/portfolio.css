@@ -1,0 +1,26 @@
+.card:hover h2 {
+  /* position: relative; */
+  opacity: 1;
+  top: 38%;
+  /* animation: fade-down .3s ease-in-out 0s 1; */
+}
+
+.card img {
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover img {
+  transform: scale(1.2);
+}
+
+@keyframes fade-down {
+  from {
+    top: 20px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
