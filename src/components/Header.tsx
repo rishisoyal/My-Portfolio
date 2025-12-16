@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="lg:h-full bottom-0 fixed w-full lg:w-max p-4 lg:my-2 lg:bg-transparent backdrop-blur-2xl lg:backdrop-blur-none z-99 right-0 block lg:flex">
+      <header className="lg:h-full bottom-0 fixed w-full lg:w-max p-4 lg:my-2 lg:bg-transparent backdrop-blur-2xl lg:backdrop-blur-none z-40 right-0 block lg:flex">
         <ul className="flex flex-row lg:flex-col items-center justify-evenly lg:justify-center w-full lg:gap-6">
           {links.map((link, i) => (
             <li key={i} className="flex place-content-center relative">

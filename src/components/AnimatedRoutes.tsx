@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion'
 import { useRouterState } from '@tanstack/react-router'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function AnimatedRoutes({
   children,
@@ -11,7 +11,7 @@ export default function AnimatedRoutes({
 
   return (
     <>
-      <div className='relative min-h-screen'>
+      <div className="relative">
         <AnimatePresence>
           <div
             data-aos="zoom-out"
@@ -23,7 +23,7 @@ export default function AnimatedRoutes({
           <motion.div
             key={currentKey}
             initial={{
-              top: '0%'
+              top: '0%',
             }}
             animate={{
               top: '100%',
@@ -31,7 +31,7 @@ export default function AnimatedRoutes({
                 duration: 0.7,
                 ease: [0.77, 0, 0.175, 1],
                 direction: { from: 'top' },
-                delay: 0
+                delay: 0,
               },
             }}
             exit={{

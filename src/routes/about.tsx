@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
 import { LuBriefcaseBusiness } from 'react-icons/lu'
 import { MdOutlineFileDownload } from 'react-icons/md'
 
@@ -46,10 +47,12 @@ function RouteComponent() {
 
   return (
     <>
-      <main className='mb-14 lg:mb-0 max-w-screen overflow-x-hidden'>
+      <main className="mb-14 lg:mb-0 max-w-screen overflow-x-hidden">
         <section className="flex flex-col p-3 sm:p-8 relative items-center justify-center gap-8 w-full min-h-screen">
-          <div className='h-24 w-full flex items-center justify-center'>
-            <div className='text-6xl sm:text-9xl absolute opacity-15 font-bold -z-9 text-center flex items-center justify-center animate__animated animate__zoomIn'>RESUME</div>
+          <div className="h-24 w-full flex items-center justify-center">
+            <div className="text-6xl sm:text-9xl absolute opacity-15 font-bold -z-9 text-center flex items-center justify-center animate__animated animate__zoomIn">
+              RESUME
+            </div>
             <h1 className="text-4xl sm:text-6xl flex items-center justify-center font-bold w-full h-full">
               ABOUT<span className="text-[#5160b2] px-4">ME</span>
             </h1>
@@ -64,41 +67,50 @@ function RouteComponent() {
                 <div className="flex flex-col gap-6 w-full justify-around">
                   <div className="grid grid-cols-2 gap-4 justify-around w-full">
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>First Name:</strong> Rishi
+                      <span className='text-[#cdd6f4]'>First Name:</span>
+                      <span className=''>Rishi</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Last Name:</strong> Soyal
+                      <span className='text-[#cdd6f4]'>Last Name:</span>
+                      <span className=''>Soyal</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Age:</strong> 21 Years
+                      <span className='text-[#cdd6f4]'>Age:</span>
+                      <span className=''>21 Years</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Nationality:</strong> Indian
+                      <span className='text-[#cdd6f4]'>Nationality:</span>
+                      <span className=''>Indian</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Freelance:</strong>{' '}
-                      <span className="available">Available</span>
+                     <span className='text-[#cdd6f4]'>Freelance:</span>
+                      <span className=''>Available</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Address:</strong> Cool Place
+                      <span className='text-[#cdd6f4]'>Address:</span>
+                      <span className=''>My Address</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Phone:</strong> +911234567890
+                      <span className='text-[#cdd6f4]'>Phone:</span>
+                      <span className=''>+91 1234567890</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Email:</strong> cooldude@mail.com
+                      <span className='text-[#cdd6f4]'>Email:</span>
+                      <span className=''>My email</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>GitHub:</strong> rishisoyal
+                      <span className='text-[#cdd6f4]'>GitHub:</span>
+                      <span className=''>rishisoyal</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <strong>Languages:</strong> Hindi, English
+                      <span className='text-[#cdd6f4]'>Languages:</span>
+                      <span className=''>English, Hindi</span>
                     </div>
                   </div>
-                  <button className="flex items-center justify-between cursor-pointer gap-2 p-4 overflow-hidden mt-4 relative bg-transparent rounded-full w-60 border-2 border-[#5160b2] before:w-full before:rounded-full before:bg-[#5160b2] before:absolute before:inset-0 before:-z-1 before:translate-x-full hover:before:translate-x-0 before:transition-all before:duration-500 before:ease-out mb-10 hover:translate-x-3 transition-all duration-500">
+                  <button className="primary-btn rounded-full before:rounded-full mb-12">
                     <span className="font-semibold">DOWNLOAD CV</span>
                     <span className="rounded-full bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">
-                      <MdOutlineFileDownload size={30}/>
+                      <MdOutlineFileDownload size={30} />
                     </span>
                   </button>
                 </div>
@@ -108,15 +120,21 @@ function RouteComponent() {
             <div className="grid grid-cols-2 gap-8 h-max animate__animated animate__slideInRight">
               <div className="flex flex-col items-start justify-center gap-2 w-max-content h-32 p-3 sm:p-6 py-12 border-2 border-[#45475a] rounded-xl">
                 <span className="font-bold text-4xl text-[#5160b2]">12+</span>
-                <span className="stat-text text-sm sm:text-lg">YEARS OF EXPERIENCE</span>
+                <span className="stat-text text-sm sm:text-lg">
+                  YEARS OF EXPERIENCE
+                </span>
               </div>
               <div className="flex flex-col items-start justify-center gap-2 w-max-content h-32 p-6 py-12 border-2 border-[#45475a] rounded-xl">
                 <span className="font-bold text-4xl text-[#5160b2]">97+</span>
-                <span className="stat-text text-sm sm:text-lg">COMPLETED PROJECTS</span>
+                <span className="stat-text text-sm sm:text-lg">
+                  COMPLETED PROJECTS
+                </span>
               </div>
               <div className="flex flex-col items-start justify-center gap-2 w-max-content h-32 p-6 py-12 border-2 border-[#45475a] rounded-xl">
                 <span className="font-bold text-4xl text-[#5160b2]">81+</span>
-                <span className="stat-text text-sm sm:text-lg">HAPPY CUSTOMERS</span>
+                <span className="stat-text text-sm sm:text-lg">
+                  HAPPY CUSTOMERS
+                </span>
               </div>
               <div className="flex flex-col items-start justify-center gap-2 w-max-content h-32 p-6 py-12 border-2 border-[#45475a] rounded-xl">
                 <span className="font-bold text-4xl text-[#5160b2]">53+</span>
@@ -127,13 +145,15 @@ function RouteComponent() {
         </section>
         <section className="flex flex-col items-center justify-center min-h-screen">
           <div className="flex items-center justify-center w-full py-6">
-            <h2 className="text-2xl sm:text-4xl font-bold">MY SKILLS</h2>
+            <h2 data-aos="fade-down" className="text-2xl sm:text-4xl font-bold">
+              MY SKILLS
+            </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 w-4/5 p-0 sm:p-2 gap-8 items-center place-content-center justify-items-center">
             {skills.map((skill, i) => (
               <div
                 key={i}
-                data-aos={i%2 === 0? "fade-up-right": "fade-up-left"}
+                data-aos={i % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
                 className="w-full max-w-44 flex flex-col items-center justify-center"
               >
                 <div className="w-full flex items-center justify-center">
@@ -158,7 +178,7 @@ function RouteComponent() {
                       // Colors
                       pathColor: `#5160b2`,
                       textColor: '#cdd6f4',
-                      trailColor: '#cdd6f4',
+                      trailColor: '#45475a',
                       backgroundColor: '#ffffff',
                     })}
                   />
@@ -170,26 +190,30 @@ function RouteComponent() {
             ))}
           </div>
         </section>
-        <section className='min-h-screen'>
+        <section className="min-h-screen">
           <div className="flex items-center justify-center w-full pt-12 pb-4">
-            <h2 className="text-2xl sm:text-4xl font-bold">EXPERIENCE & EDUCATION</h2>
+            <h2 data-aos="fade-down" className="text-2xl sm:text-4xl font-bold">
+              EXPERIENCE & EDUCATION
+            </h2>
           </div>
           <div className="w-full flex items-center justify-center">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-3 sm:p-8 w-full lg:w-400 place-items-center">
-              {experienceEducation.map((val, i) => (
-                <div 
-                data-aos={i%2===0? "fade-down-right": "fade-down-left"}
-                className="flex gap-4 p-4 w-full lg:w-fit">
+              {experienceEducation.map((_val, i) => (
+                <div
+                  key={i}
+                  data-aos={i % 2 === 0 ? 'fade-down-right' : 'fade-down-left'}
+                  className="flex gap-4 p-4 w-full lg:w-fit"
+                >
                   <div className="flex flex-col items-center justify-center">
                     <span className="p-2 bg-[#5160b2] rounded-full">
                       {' '}
-                      <LuBriefcaseBusiness size={30}/>
+                      <LuBriefcaseBusiness size={30} />
                     </span>
                     <span className="w-1 h-full bg-gray-500"></span>
                   </div>
                   <div className="flex flex-col gap-2">
                     <div>2018-present</div>
-                    <h2 className='text-xl'>WEB DEVELOPER</h2>
+                    <h2 className="text-xl">WEB DEVELOPER</h2>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </p>

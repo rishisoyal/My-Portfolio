@@ -127,6 +127,7 @@ function RouteComponent() {
               <div className="project-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-284 place-items-center gap-8">
                 {portfolios.map((portfolio, i) => (
                   <div
+                    key={i}
                     onClick={() => handlePortfolioClick(i)}
                     className={`card relative rounded-2xl flex items-center justify-center w-full h-55 cursor-pointer overflow-hidden bg-cover transition-all duration-300 ease-in-out bg-center animate__animated animate__slideInLeft animate__delay-${i} border-2 border-[#45475a]`}
                   >
@@ -162,7 +163,7 @@ function RouteComponent() {
 function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
   return (
     <>
-      <div className="w-full md:w-160">
+      <div className="w-full md:w-160 h-max">
         <div className="w-full flex items-center justify-center text-3xl sm:text-4xl">
           <h2 className="text-[#5160b2]">{portfolio.name}</h2>
         </div>
@@ -172,7 +173,9 @@ function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
             <div className="flex items-center gap-2 p-2">
               {' '}
               <IoCodeSlash size={25} /> Tech Stack:{' '}
-              <strong className='text-[#cdd6f4]'>{portfolio.techStack?.join(', ')}</strong>
+              <strong className="text-[#cdd6f4]">
+                {portfolio.techStack?.join(', ')}
+              </strong>
             </div>
             <div className="flex items-center gap-2 p-2">
               <FaArrowUpRightFromSquare />
@@ -191,7 +194,7 @@ function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
               {' '}
               <IoMdInformationCircleOutline size={25} /> About this project:
             </div>
-            <p className='text-[#cdd6f4]'>{portfolio.desc}</p>
+            <p className="text-[#cdd6f4]">{portfolio.desc}</p>
           </div>
         </div>
 

@@ -1,5 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { FaGithub, FaLinkedin, FaMap, FaPaperPlane, FaPhoneAlt, FaYoutube } from 'react-icons/fa'
+import { useState, type ChangeEvent, type FormEvent } from 'react'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaMap,
+  FaPaperPlane,
+  FaPhoneAlt,
+  FaYoutube,
+} from 'react-icons/fa'
 import { IoMdMailOpen } from 'react-icons/io'
 
 export const Route = createFileRoute('/contact')({
@@ -7,9 +15,26 @@ export const Route = createFileRoute('/contact')({
 })
 
 function RouteComponent() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  })
+  function handleFormSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+  }
+
+  function handleFormChange(
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
+  ) {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
   return (
     <>
-      <main className='mb-14 lg:mb-0'>
+      <main className="mb-14 lg:mb-0">
         <section className="flex flex-col p-3 sm:p-8 justify-center gap-8 w-full">
           <div className="h-24 w-full flex items-center justify-center">
             <div className="text-6xl sm:text-9xl absolute opacity-15 font-bold -z-9 text-center flex items-center justify-center animate__animated animate__zoomIn">
@@ -19,13 +44,13 @@ function RouteComponent() {
               GET IN<span className="text-[#5160b2] px-4">TOUCH</span>
             </h1>
           </div>
-          <div className="w-full p-1 lg:p-12 animate__animated animate__zoomIn">
+          <div className="w-full p-1 lg:p-12 animate__animated animate__fadeInUp">
             <div className="w-full flex flex-col lg:flex-row items-start justify-center gap-14">
               {/* Left section */}
               <div className="left flex gap-8 flex-col w-full lg:w-100">
                 {/* Main text */}
                 <div className="flex flex-col gap-2">
-                  <div className="text-3xl font-bold w-full flex items-center justify-start">
+                  <div className="text-3xl font-bold w-full flex items-center justify-start py-2">
                     <h2>DON'T BE SHY!</h2>
                   </div>
                   <p className="text-left text-wrap text-[#cdd6f4]">
@@ -47,7 +72,7 @@ function RouteComponent() {
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <div className="">
-                      <IoMdMailOpen size={30}/>
+                      <IoMdMailOpen size={30} />
                     </div>
                     <div className="flex flex-col">
                       <h5 className="text-gray-400">MAIL ME</h5>
@@ -96,46 +121,61 @@ function RouteComponent() {
               {/* Right section */}
               <div className="flex w-full lg:w-180 min-h-full">
                 <div className="w-full">
-                  <form className="flex flex-col gap-2">
+                  <form
+                    onSubmit={handleFormSubmit}
+                    className="flex flex-col gap-2"
+                  >
                     <div className="w-full lg:p-2 flex gap-4 py-1  flex-col md:flex-row">
                       <input
+                        onChange={handleFormChange}
+                        value={formData.name}
                         type="text"
                         name="name"
                         id="name"
+                        required={true}
                         placeholder="YOUR NAME"
-                        className="p-4 rounded-full bg-[#313244] text-white w-full outline-none"
+                        className="p-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none"
                       />
                       <input
+                        onChange={handleFormChange}
+                        value={formData.email}
                         type="email"
                         name="email"
                         id="email"
+                        required={true}
                         placeholder="YOUR EMAIL"
-                        className="p-4 rounded-full bg-[#313244] text-white w-full outline-none"
+                        className="p-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none"
                       />
                     </div>
                     <div className="w-full lg:p-2 py-1  flex-col md:flex-row">
                       <input
+                        onChange={handleFormChange}
+                        value={formData.subject}
                         type="text"
                         name="subject"
                         id="subject"
+                        required={true}
                         placeholder="YOUR SUBJECT"
-                        className="p-4 rounded-full bg-[#313244] text-white w-full outline-none"
+                        className="p-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none"
                       />
                     </div>
                     <div className="w-full lg:p-2 py-1">
                       <textarea
+                        onChange={handleFormChange}
+                        value={formData.message}
                         name="message"
                         id="message"
+                        required={true}
                         placeholder="YOUR MESSSAGE"
-                        className="p-4 rounded-4xl bg-[#313244] text-white w-full outline-none"
-                        rows={4}
+                        className="p-4 px-6 rounded-4xl bg-[#313244] text-white w-full outline-none"
+                        rows={6}
                       ></textarea>
                     </div>
-                    <div className='w-full lg:p-2 py-1  lex-col md:flex-row'>
-                      <button className="flex items-center justify-between cursor-pointer gap-2 p-4 overflow-hidden mt-4 relative bg-transparent rounded-full w-60 border-2 border-[#5160b2] before:w-full before:rounded-full before:bg-[#5160b2] before:absolute before:inset-0 before:-z-1 before:translate-x-full hover:before:translate-x-0 before:transition-all before:duration-500 before:ease-out mb-10 animate__delay-1s hover:translate-x-3 transition-all duration-500">
+                    <div className="w-full lg:p-2 py-1  lex-col md:flex-row">
+                      <button className="primary-btn rounded-full before:rounded-full">
                         <span className="font-semibold">SEND MESSAGE</span>
                         <span className="rounded-full bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">
-                          <FaPaperPlane size={20}/>
+                          <FaPaperPlane size={20} />
                         </span>
                       </button>
                     </div>

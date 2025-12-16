@@ -10,6 +10,7 @@ body {
   background-color: #11111b;
   color: white;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 #cursor,
@@ -18,11 +19,45 @@ body {
   /* filter: invert(100%); */
 }
 
-svg text{
-  width: 100%;
+svg text {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: .5rem;
+  padding: 1rem;
+  overflow: hidden;
+  margin-top: 16px;
+  position: relative;
+  background: transparent;
+  width: 15rem;
+  border: 2px solid #5160b2;
+  transition: all .5s;
+}
+
+.primary-btn::before {
+  content: '';
+  width: 100%;
+  background-color: #5160b2;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(100%);
+  transition: all .5s ease-out;
+}
+
+.primary-btn:hover {
+  transform: translateX(12px);
+}
+
+.primary-btn:hover::before {
+  transform: translateX(0%);
 }
 
 @media (max-width : 1024px) {

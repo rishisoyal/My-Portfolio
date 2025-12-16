@@ -1,17 +1,10 @@
-import { RouterProvider, Outlet } from '@tanstack/react-router'
-import type { Router } from '@tanstack/react-router'
-import AnimatedRoutes from './components/AnimatedRoutes'
+import type { AnyRouter } from '@tanstack/react-router'
+import { RouterProvider } from '@tanstack/react-router'
 
-interface AppProps<TRouter extends Router> {
-  router: TRouter
+interface AppProps {
+  router: AnyRouter
 }
 
-export function App<TRouter extends Router>({ router }: AppProps<TRouter>) {
-  return (
-    <RouterProvider router={router}>
-      <AnimatedRoutes>
-        <Outlet/>
-      </AnimatedRoutes>
-    </RouterProvider>
-  )
+export function App({ router }: AppProps) {
+  return <RouterProvider router={router} />
 }

@@ -9,8 +9,8 @@ function Home() {
   return (
     <>
       <main className="overflow-hidden relative min-h-screen mb-14 lg:mb-0">
-        <div className="bg-[#89b4fa2b] absolute h-[200%] w-full -rotate-15 -left-[73%] -top-1/2 -z-1 hidden lg:block animate__animated animate__fadeInLeft"></div>
-        <div className="p-8 flex flex-col lg:flex-row justify-evenly items-center">
+        <div className="bg-[#89b4fa2b] absolute h-[200%] w-full -rotate-15 -left-[73%] -top-1/2 -z-1 hidden lg:block animate__animated animate__slideInLeft"></div>
+        <div className="p-8 flex flex-col lg:flex-row justify-evenly items-center animate__animated animate__fadeInUp">
           <img
             src="https://setaswall.com/wp-content/uploads/2020/03/Aesthetic-Mobile-Wallpaper-620x1308-098-340x550.jpg"
             alt=""
@@ -36,8 +36,8 @@ function Home() {
               </div>
               <div className="w-full flex items-center lg:pl-18 justify-center lg:justify-start">
                 <Link to="/about">
-                  <button className="flex items-center justify-between cursor-pointer gap-2 p-4 overflow-hidden mt-4 relative bg-transparent rounded-full w-60 border-2 border-[#5160b2] before:w-full before:rounded-full before:bg-[#5160b2] before:absolute before:inset-0 before:-z-1 before:translate-x-full hover:before:translate-x-0 before:transition-all before:duration-500 before:ease-out hover:translate-x-3 transition-all duration-500">
-                    <span className="font-semibold">ABOUT ME</span>
+                  <button className="rounded-full primary-btn before:rounded-full">
+                    <span className="font-semibold">MORE ABOUT ME</span>
                     <span className="absolute right-0 rounded-full bg-[#5160b2] w-14 h-14 flex items-center justify-center text-xl">
                       <ImArrowRight2 size={25} />
                     </span>
@@ -47,7 +47,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-[#89b4fa2b] absolute h-[200%] w-full -rotate-15 -right-[73%] -bottom-1/2 -z-1 hidden lg:block animate__animated animate__fadeInRight"></div>
+        <div className="bg-[#89b4fa2b] absolute h-[200%] w-full -rotate-15 -right-[73%] -bottom-1/2 -z-1 hidden lg:block animate__animated animate__slideInRight"></div>
       </main>
     </>
   )

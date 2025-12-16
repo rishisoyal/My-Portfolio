@@ -18,7 +18,7 @@ export default function Popup({ isOpen, onClose, children }: Props) {
       {isOpen && (
         <>
           <motion.div
-            className="popup fixed inset-0 bg-black/40 backdrop-blur-md z-40"
+            className="popup fixed inset-0 bg-black/40 backdrop-blur-md z-50"
             onClick={onClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -37,7 +37,7 @@ export default function Popup({ isOpen, onClose, children }: Props) {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="w-full flex items-center justify-end">
-                <button onClick={onClose} className='cursor-pointer'><AiOutlineCloseCircle size={30}/></button>
+                <button onClick={onClose} className='cursor-pointer opacity-70 hover:opacity-100 transition-all duration-200' title='Close Card'><AiOutlineCloseCircle size={30}/></button>
               </div>
               {children}
             </div>
