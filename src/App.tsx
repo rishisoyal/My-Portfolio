@@ -1,7 +1,7 @@
 import type { AnyRouter } from '@tanstack/react-router'
 import { RouterProvider } from '@tanstack/react-router'
 
-interface AppProps {
+type AppProps = {
   router: AnyRouter
 }
 

@@ -28,7 +28,7 @@ export default function AnimatedRoutes({
             animate={{
               top: '100%',
               transition: {
-                duration: 0.7,
+                duration: 1.0,
                 ease: [0.77, 0, 0.175, 1],
                 direction: { from: 'top' },
                 delay: 0,
@@ -38,10 +38,10 @@ export default function AnimatedRoutes({
               display: 'none',
             }}
             style={{
-              position: 'absolute',
+              position: 'fixed',
               inset: 0,
-              background: '#313244',
-              zIndex: 9999,
+              background: '#1e1e2e',
+              zIndex: 99,
               transformOrigin: 'top center',
             }}
           ></motion.div>

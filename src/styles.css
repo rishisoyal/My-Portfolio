@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import "tailwindcss";
 
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/JetBrains_Mono/static/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::selection {
+  background-color: #5160b2;
+  color: whitesmoke;
+}
+
 body {
-  @apply m-0;
   font-family: "Poppins";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,10 +26,8 @@ body {
   scroll-behavior: smooth;
 }
 
-#cursor,
-#trail {
-  mix-blend-mode: difference;
-  /* filter: invert(100%); */
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 svg text {
@@ -28,9 +39,9 @@ svg text {
 .primary-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
-  gap: .5rem;
+  gap: .3rem;
   padding: 1rem;
   overflow: hidden;
   margin-top: 16px;
@@ -39,6 +50,10 @@ svg text {
   width: 15rem;
   border: 2px solid #5160b2;
   transition: all .5s;
+}
+
+.primary-btn span {
+  margin-left: -40px;
 }
 
 .primary-btn::before {
@@ -58,6 +73,68 @@ svg text {
 
 .primary-btn:hover::before {
   transform: translateX(0%);
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+#hero-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: max-content;
+  height: max-content; */
+  border-radius: 30px;
+}
+
+#hero-img img {
+  border-radius: 30px;
+
+}
+
+@media (max-width: 1024px) {
+
+  #hero-img,
+  #hero-img img {
+    border-radius: 100%;
+  }
+}
+
+#hero-img::before,
+#hero-img::after {
+  content: '';
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  /* background: conic-gradient(from var(--angle),transparent 70%, #5160b2); */
+  animation: border-spin 8s linear 0s infinite;
+  scale: 100.5%;
+}
+
+#hero-img::after {
+  background: conic-gradient(from calc(var(--angle) + 100deg), transparent 70%, #5160b2, transparent);
+}
+
+#hero-img::before {
+  background: conic-gradient(from calc(var(--angle) - 90deg), transparent 70%, #5160b2, transparent);
+}
+
+@keyframes border-spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
 }
 
 @media (max-width : 1024px) {

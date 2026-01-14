@@ -47,6 +47,8 @@ function RouteComponent() {
 
   return (
     <>
+      <title>Rishi Soyal - About</title>
+
       <main className="mb-14 lg:mb-0 max-w-screen overflow-x-hidden">
         <section className="flex flex-col p-3 sm:p-8 relative items-center justify-center gap-8 w-full min-h-screen">
           <div className="h-24 w-full flex items-center justify-center">
@@ -67,44 +69,44 @@ function RouteComponent() {
                 <div className="flex flex-col gap-6 w-full justify-around">
                   <div className="grid grid-cols-2 gap-4 justify-around w-full">
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>First Name:</span>
-                      <span className=''>Rishi</span>
+                      <span className="text-[#cdd6f4]">First Name:</span>
+                      <span className="">Rishi</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>Last Name:</span>
-                      <span className=''>Soyal</span>
+                      <span className="text-[#cdd6f4]">Last Name:</span>
+                      <span className="">Soyal</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>Age:</span>
-                      <span className=''>21 Years</span>
+                      <span className="text-[#cdd6f4]">Age:</span>
+                      <span className="">21 Years</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>Nationality:</span>
-                      <span className=''>Indian</span>
+                      <span className="text-[#cdd6f4]">Nationality:</span>
+                      <span className="">Indian</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                     <span className='text-[#cdd6f4]'>Freelance:</span>
-                      <span className=''>Available</span>
+                      <span className="text-[#cdd6f4]">Freelance:</span>
+                      <span className="">Available</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>Address:</span>
-                      <span className=''>My Address</span>
+                      <span className="text-[#cdd6f4]">Address:</span>
+                      <span className="">My Address</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>Phone:</span>
-                      <span className=''>+91 1234567890</span>
+                      <span className="text-[#cdd6f4]">Phone:</span>
+                      <span className="">+91 1234567890</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>Email:</span>
-                      <span className=''>My email</span>
+                      <span className="text-[#cdd6f4]">Email:</span>
+                      <span className="">My email</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>GitHub:</span>
-                      <span className=''>rishisoyal</span>
+                      <span className="text-[#cdd6f4]">GitHub:</span>
+                      <span className="">rishisoyal</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className='text-[#cdd6f4]'>Languages:</span>
-                      <span className=''>English, Hindi</span>
+                      <span className="text-[#cdd6f4]">Languages:</span>
+                      <span className="">English, Hindi</span>
                     </div>
                   </div>
                   <button className="primary-btn rounded-full before:rounded-full mb-12">
@@ -212,7 +214,9 @@ function RouteComponent() {
                     <span className="w-1 h-full bg-gray-500"></span>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <div>2018-present</div>
+                    <div className="bg-gray-700 w-fit px-2 rounded-full text-gray-200 text-sm">
+                      2018-present
+                    </div>
                     <h2 className="text-xl">WEB DEVELOPER</h2>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.

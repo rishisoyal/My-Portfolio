@@ -2,39 +2,52 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ImArrowRight2 } from 'react-icons/im'
 
 export const Route = createFileRoute('/')({
-  component: Home,
+  component: RouteComponent,
 })
 
-function Home() {
+function RouteComponent() {
   return (
     <>
+      <title>Rishi Soyal - Home</title>
+
       <main className="overflow-hidden relative min-h-screen mb-14 lg:mb-0">
-        <div className="bg-[#89b4fa2b] absolute h-[200%] w-full -rotate-15 -left-[73%] -top-1/2 -z-1 hidden lg:block animate__animated animate__slideInLeft"></div>
-        <div className="p-8 flex flex-col lg:flex-row justify-evenly items-center animate__animated animate__fadeInUp">
-          <img
-            src="https://setaswall.com/wp-content/uploads/2020/03/Aesthetic-Mobile-Wallpaper-620x1308-098-340x550.jpg"
-            alt=""
-            className="w-60 h-60 lg:rounded-2xl lg:w-120 lg:h-164 rounded-full border-2 lg:border-0 shadow-2xl border-[#45475a]"
-          />
-          <div className="flex flex-col items-center justify-center p-6 sm:w-200">
-            <div className="flex items-center justify-center flex-col sm:w-full sm:p-15">
-              <div className="flex flex-col p-4 pt-6 pb-8">
-                <span className="text-4xl sm:text-6xl font-bold text-[#5160b2]">
-                  I'M RISHI SOYAL.
-                </span>
-                <span className="text-4xl sm:text-6xl font-bold">
-                  WEB DEVELOPER
-                </span>
+        <div className="bg-[#1e1e2e] absolute h-[200%] w-full -rotate-15 -left-[73%] -top-1/2 -z-1 hidden lg:block animate__animated animate__slideInLeft"></div>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1600"
+          className="p-8 flex gap-6 flex-col lg:flex-row items-center justify-around animate__animated animate__fadeInUp"
+        >
+          <div
+            id="hero-img"
+            className="w-60 h-60 sm:w-80 sm:h-80 lg:rounded-2xl lg:w-lg lg:h-162 lg:mt-4 rounded-[10px] lg:border-0"
+          >
+            <img
+              src="/home_1.jpg"
+              alt=""
+              className="max-w-full min-w-full min-h-full max-h-full object-cover rounded-[10px]"
+            />
+          </div>
+          <div className="flex flex-col items-center justify-center sm:w-200">
+            <div className="flex items-center lg:items-start justify-center flex-col">
+              <div className="flex gap-2 items-start justify-center">
+                <div className="flex flex-col items-end p-4 pt-6">
+                  <span className="flex gap-4 items-center flex-nowrap text-nowrap text-4xl sm:text-6xl font-semibold text-[#5160b2] before:hidden lg:before:block before:rounded-full before:w-12 before:h-1 before:bg-[#5160b2]">
+                    I'M RISHI SOYAL.
+                  </span>
+                  <span className="text-4xl sm:text-6xl font-semibold">
+                    WEB DEVELOPER
+                  </span>
+                </div>
               </div>
-              <div className="p-4 md:w-180 lg:w-130 w-screen">
-                <p className="text-wrap text-center lg:text-left w-full lg:w-130 sm:text-xl text-[#cdd6f4]">
+              <div className="p-4 pt-0 md:w-180 lg:w-130 w-screen">
+                <p className="text-wrap leading-8 text-center lg:text-left w-full lg:w-150 sm:text-[18px] text-[#cdd6f4] ">
                   I'm an India based full-stack web developer focused on
                   crafting clean & user-friendly experiences, I am passionate
                   about building excellent software that improves the lives of
                   those around me.
                 </p>
               </div>
-              <div className="w-full flex items-center lg:pl-18 justify-center lg:justify-start">
+              <div className="w-full px-4 flex items-center  justify-center lg:justify-start">
                 <Link to="/about">
                   <button className="rounded-full primary-btn before:rounded-full">
                     <span className="font-semibold">MORE ABOUT ME</span>
@@ -47,7 +60,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-[#89b4fa2b] absolute h-[200%] w-full -rotate-15 -right-[73%] -bottom-1/2 -z-1 hidden lg:block animate__animated animate__slideInRight"></div>
+        <div className="bg-[#1e1e2e] absolute h-[200%] w-full -rotate-15 -right-[73%] -bottom-1/2 -z-1 hidden lg:block animate__animated animate__slideInRight"></div>
       </main>
     </>
   )

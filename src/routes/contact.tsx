@@ -34,7 +34,9 @@ function RouteComponent() {
 
   return (
     <>
-      <main className="mb-14 lg:mb-0">
+      <title>Rishi Soyal - Contact</title>
+
+      <main className="mb-18 lg:mb-0">
         <section className="flex flex-col p-3 sm:p-8 justify-center gap-8 w-full">
           <div className="h-24 w-full flex items-center justify-center">
             <div className="text-6xl sm:text-9xl absolute opacity-15 font-bold -z-9 text-center flex items-center justify-center animate__animated animate__zoomIn">
@@ -67,7 +69,9 @@ function RouteComponent() {
                     </div>
                     <div className="flex flex-col">
                       <h5 className="text-gray-400">ADDRESS POINT</h5>
-                      <p>My address</p>
+                      <p className="text-[14px]">
+                        357, Laxmi Narayan Puri, Jaipur, Rajasthan, India
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center justify-center gap-2">
@@ -76,7 +80,12 @@ function RouteComponent() {
                     </div>
                     <div className="flex flex-col">
                       <h5 className="text-gray-400">MAIL ME</h5>
-                      <p>My Mail</p>
+                      <a
+                        href="mailto:rishisoyal510@gmail.com"
+                        className="text-[14px]"
+                      >
+                        rishisoyal510@gmail.com
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center justify-center gap-2">
@@ -85,7 +94,9 @@ function RouteComponent() {
                     </div>
                     <div className="flex flex-col">
                       <h5 className="text-gray-400">CALL ME</h5>
-                      <p>My phone</p>
+                      <a href="tel:+91 6367830221" className="text-[14px]">
+                        +91 6367830221
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -134,7 +145,7 @@ function RouteComponent() {
                         id="name"
                         required={true}
                         placeholder="YOUR NAME"
-                        className="p-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none"
+                        className="p-3 sm:py-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
                       />
                       <input
                         onChange={handleFormChange}
@@ -144,7 +155,7 @@ function RouteComponent() {
                         id="email"
                         required={true}
                         placeholder="YOUR EMAIL"
-                        className="p-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none"
+                        className="p-3 sm:py-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
                       />
                     </div>
                     <div className="w-full lg:p-2 py-1  flex-col md:flex-row">
@@ -156,7 +167,7 @@ function RouteComponent() {
                         id="subject"
                         required={true}
                         placeholder="YOUR SUBJECT"
-                        className="p-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none"
+                        className="p-3 sm:py-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
                       />
                     </div>
                     <div className="w-full lg:p-2 py-1">
@@ -167,11 +178,11 @@ function RouteComponent() {
                         id="message"
                         required={true}
                         placeholder="YOUR MESSSAGE"
-                        className="p-4 px-6 rounded-4xl bg-[#313244] text-white w-full outline-none"
-                        rows={6}
+                        className="p-3 sm:py-4 px-6 rounded-4xl bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] min-h-40 border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
+                        rows={5}
                       ></textarea>
                     </div>
-                    <div className="w-full lg:p-2 py-1  lex-col md:flex-row">
+                    <div className="w-full px-4 flex flex-col md:flex-row">
                       <button className="primary-btn rounded-full before:rounded-full">
                         <span className="font-semibold">SEND MESSAGE</span>
                         <span className="rounded-full bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">

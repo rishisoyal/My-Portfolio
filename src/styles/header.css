@@ -1,7 +1,6 @@
 header ul li a:hover h2 {
   opacity: 1;
   right: 30px;
-
 }
 
 header ul li a h2 {
@@ -9,13 +8,17 @@ header ul li a h2 {
   margin: 0;
   text-align: center;
   border-radius: 30px 0 0 30px;
-  transition: all .5s;
+  transition: all .3s;
 }
 
-header ul li a{
+header ul li a {
   transition: all .5s;
 }
 
 header ul li a:hover {
   background-color: #5160b2;
+}
+
+header ul li a:hover h2 {
+  pointer-events: all;
 }

@@ -42,23 +42,23 @@ export default function CustomCursor() {
   return (
     <>
       <AnimatePresence>
-        <motion.div
-          id="cursor"
-          className={`fixed w-2 h-2 rounded-full -translate-1/2 bg-[#5160b2] z-99 pointer-events-none  ${
-            visible ? '' : 'hidden'
-          }`}
-          style={{ top: pos.y, left: pos.x }}
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transitionDuration: 2000 }}
-          exit={{ opacity: 0 }}
-          id="trail"
-          className={`fixed w-10 h-10 rounded-full -translate-1/2 bg-[#5160b2] z-99 transition-all duration-500 ease-out pointer-events-none opacity-70  ${
-            visible ? '' : 'hidden'
-          }`}
-          style={{ top: pos.y, left: pos.x }}
-        ></motion.div>
+        {visible && (
+          <div className=" pointer-events-none">
+            <motion.div
+              id="cursor"
+              className={`fixed w-2 h-2 rounded-full -translate-1/2 bg-[#5160b2] z-90 pointer-events-none}`}
+              style={{ top: pos.y, left: pos.x }}
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transitionDuration: 2000 }}
+              exit={{ opacity: 0 }}
+              id="trail"
+              className={`fixed w-10 h-10 rounded-full -translate-1/2 bg-[#5160b2ae] border-[#5160b2] z-99 transition-all duration-500 ease-out pointer-events-none opacity-70`}
+              style={{ top: pos.y, left: pos.x }}
+            ></motion.div>
+          </div>
+        )}
       </AnimatePresence>
     </>
   )

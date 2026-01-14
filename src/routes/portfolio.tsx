@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import '../../styles/portfolio.css'
-import { useState } from 'react'
+import '../styles/portfolio.css'
+import { useEffect, useState } from 'react'
 import Popup from '@/components/PopUp'
 import { IoCodeSlash } from 'react-icons/io5'
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
@@ -10,7 +10,7 @@ export const Route = createFileRoute('/portfolio')({
   component: RouteComponent,
 })
 
-type Portfolio = {
+interface Portfolio {
   name?: string
   desc?: string
   img?: string
@@ -24,7 +24,7 @@ function RouteComponent() {
     {
       name: 'Weather App',
       desc: 'A sleek, modern web application that displays current weather and 3-day forecast for any city using the WeatherAPI API. Users can also get local weather data automatically via IP address.',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
       techStack: ['Javascript', 'Svelte'],
@@ -32,56 +32,56 @@ function RouteComponent() {
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
     {
       name: 'Weather App',
       desc: '',
-      img: '/images/portfolio/weather_app.webp',
+      img: '/weather_app.webp',
       public_url: 'https://weather-app-rishisoyal.vercel.app/',
       github: 'https://github.com/rishisoyal/Weather-App',
     },
@@ -97,8 +97,16 @@ function RouteComponent() {
     setPreviewMode(true)
   }
 
+  useEffect(() => {
+    previewMode
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto')
+  }, [previewMode])
+
   return (
     <>
+      <title>Rishi Soyal - Portfolio</title>
+
       <main className="mb-14 lg:mb-0">
         <section className="flex flex-col p-8 justify-center gap-8 w-full">
           <div className="h-24 w-full flex items-center justify-center">
@@ -111,7 +119,7 @@ function RouteComponent() {
           </div>
           <div className="w-full">
             <div className="w-full flex items-center justify-center p-4 py-8">
-              <ul className="flex gap-4 text-xl font-semibold">
+              <ul className="flex gap-4 text-[18px]">
                 <li className="cursor-pointer hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
                   All
                 </li>
@@ -168,12 +176,13 @@ function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
           <h2 className="text-[#5160b2]">{portfolio.name}</h2>
         </div>
         {/* Info section */}
-        <div className="p-4 flex flex-col ga-4">
+        <div className="p-4 flex flex-col ga-4 text-sm sm:text-[1rem]">
           <div className="grid grid-cols-1 md:grid-cols-2 gp-4">
             <div className="flex items-center gap-2 p-2">
               {' '}
-              <IoCodeSlash size={25} /> Tech Stack:{' '}
-              <strong className="text-[#cdd6f4]">
+              <IoCodeSlash size={25} />{' '}
+              <span className="text-nowrap">Tech Stack: </span>
+              <strong className="text-[#cdd6f4] flex flex-wrap">
                 {portfolio.techStack?.join(', ')}
               </strong>
             </div>
