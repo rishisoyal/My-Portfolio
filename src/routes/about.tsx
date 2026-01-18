@@ -12,11 +12,11 @@ function RouteComponent() {
   const skills = [
     {
       name: 'HTML',
-      level: 25,
+      level: 70,
     },
     {
       name: 'JavaScript',
-      level: 89,
+      level: 85,
     },
     {
       name: 'CSS',
@@ -31,12 +31,12 @@ function RouteComponent() {
       level: 60,
     },
     {
-      name: 'C++',
-      level: 30,
+      name: 'NextJS',
+      level: 50,
     },
     {
-      name: 'Java',
-      level: 20,
+      name: 'TypeScript',
+      level: 70,
     },
     {
       name: 'NodeJS',
@@ -86,23 +86,23 @@ function RouteComponent() {
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#cdd6f4]">Freelance:</span>
-                      <span className="">Available</span>
+                      <span className="text-green-400">Available</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#cdd6f4]">Address:</span>
-                      <span className="">My Address</span>
+                      <span className="">357, Laxmi Narayan Puri, Jaipur</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#cdd6f4]">Phone:</span>
-                      <span className="">+91 1234567890</span>
+                      <span className="">+91 6367830221</span>
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:gap-1">
+                    <div className="flex flex-col sm:flex-row sm:gap-1 flex-wrap">
                       <span className="text-[#cdd6f4]">Email:</span>
-                      <span className="">My email</span>
+                      <span className="text-wrap">rishisoyal510@gmail.com</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#cdd6f4]">GitHub:</span>
-                      <span className="">rishisoyal</span>
+                      <a href='https://github.com/rishisoyal' target='_blank' className="">rishisoyal</a>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#cdd6f4]">Languages:</span>

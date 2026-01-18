@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
-import '../styles/popUp.css'
+import '../../styles/popUp.css'
 
 interface Props {
   isOpen: boolean

@@ -1,13 +1,11 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import 'animate.css'
-import AnimatedRoutes from '../components/AnimatedRoutes'
-import Header from '../components/Header'
-// import CustomCursor from '@/components/CustomCursor'
+import { Header, CustomCursor, AnimatedRoutes } from '@/components/ui'
 
 export const Route = createRootRoute({
   component: () => (
     <>
-      {/* <CustomCursor /> */}
+      <CustomCursor />
       <Header />
 
       <AnimatedRoutes>

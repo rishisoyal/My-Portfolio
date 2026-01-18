@@ -107,24 +107,27 @@ function RouteComponent() {
                       href="https://github.com/rishisoyal"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="p-3 bg-[#313244] rounded-full grid place-content-center hover:bg-[#5160b2] transition-all duration-500"
                     >
-                      <FaGithub size={30} />
+                      <FaGithub size={20} />
                     </a>
                   </span>
                   <a
                     href="https://www.linkedin.com/in/rishisoyal"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="p-3 bg-[#313244] rounded-full grid place-content-center hover:bg-[#5160b2] transition-all duration-500"
                   >
-                    <FaLinkedin size={30} />
+                    <FaLinkedin size={20} />
                   </a>
                   <span>
                     <a
                       href="https://www.youtube.com"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="p-3 bg-[#313244] rounded-full grid place-content-center hover:bg-[#5160b2] transition-all duration-500"
                     >
-                      <FaYoutube size={30} />
+                      <FaYoutube size={20} />
                     </a>
                   </span>
                 </div>

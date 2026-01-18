@@ -11,8 +11,8 @@ export default function AnimatedRoutes({
 
   return (
     <>
-      <div className="relative">
-        <AnimatePresence>
+      <div className="relative min-h-screen overflow-hidden">
+        <AnimatePresence mode='wait'>
           <div
             data-aos="zoom-out"
             data-aos-duration="1500"

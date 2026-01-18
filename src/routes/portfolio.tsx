@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import '../styles/portfolio.css'
 import { useEffect, useState } from 'react'
-import Popup from '@/components/PopUp'
+import { Popup } from '@/components/ui'
 import { IoCodeSlash } from 'react-icons/io5'
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
 import { IoMdInformationCircleOutline } from 'react-icons/io'
@@ -91,7 +91,7 @@ function RouteComponent() {
   const [portfolioToPreview, setPortfolioToPreview] =
     useState<Portfolio | null>(null)
 
-  function handlePortfolioClick(index: number): void {
+  function handlePortfolioClick(index: number) {
     const portfolio = portfolios[index]
     setPortfolioToPreview(portfolio)
     setPreviewMode(true)
@@ -142,7 +142,7 @@ function RouteComponent() {
                     <img
                       className="w-full h-full bg-cover"
                       src={portfolio.img}
-                      alt=""
+                      alt={portfolio.name}
                     />
                     <span className="w-full h-full absolute bg-[#000000] opacity-0 hover:opacity-50 transition-all duration-500 ease-in-out flex items-center justify-center"></span>
                     <h2 className="text-3xl absolute font-semibold text-[#5160b2] brightness-200 opacity-0 top-5 transition-all duration-500 pointer-events-none">
@@ -194,7 +194,7 @@ function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
                 target="_blank"
                 className=" text-[#5160b2] underline"
               >
-                <strong>Visit the Site</strong>
+                <strong>Check out the app</strong>
               </a>
             </div>
           </div>
@@ -208,7 +208,11 @@ function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
         </div>
 
         <div>
-          <img className="w-full rounded-2xl" src={portfolio.img} alt="" />
+          <img
+            className="w-full rounded-2xl border border-[#45475a]"
+            src={portfolio.img}
+            alt={portfolio.name}
+          />
         </div>
       </div>
     </>

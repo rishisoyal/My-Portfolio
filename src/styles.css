@@ -19,7 +19,7 @@ body {
   font-family: "Poppins";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* cursor: none; */
+  cursor: none;
   background-color: #11111b;
   color: white;
   overflow-x: hidden;
@@ -114,9 +114,9 @@ svg text {
   z-index: -1;
   inset: 0;
   border-radius: inherit;
-  /* background: conic-gradient(from var(--angle),transparent 70%, #5160b2); */
   animation: border-spin 8s linear 0s infinite;
   scale: 100.5%;
+  filter: blur(10px);
 }
 
 #hero-img::after {
@@ -137,7 +137,7 @@ svg text {
   }
 }
 
-@media (max-width : 1024px) {
+@media (max-width : 720px) {
   body {
     cursor: default;
   }

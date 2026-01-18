@@ -48,7 +48,7 @@ function RouteComponent() {
                 </p>
               </div>
               <div className="w-full px-4 flex items-center  justify-center lg:justify-start">
-                <Link to="/about">
+                <Link to="/about" className="w-max h-max">
                   <button className="rounded-full primary-btn before:rounded-full">
                     <span className="font-semibold">MORE ABOUT ME</span>
                     <span className="absolute right-0 rounded-full bg-[#5160b2] w-14 h-14 flex items-center justify-center text-xl">
