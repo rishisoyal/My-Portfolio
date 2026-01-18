@@ -16,34 +16,38 @@ export default function CustomCursor() {
       if (!hasShown) {
         hasShown = true
         setVisible(true)
-        return
       }
 
-      if (!cursorRef.current || !trailRef.current) return
-
-      cursorRef.current.style.setProperty(
+      cursorRef.current?.style.setProperty(
         'transform',
         `translate3d(${x}px, ${y}px, 0)`,
       )
-      trailRef.current.style.setProperty(
+
+      trailRef.current?.style.setProperty(
         'transform',
         `translate3d(${x}px, ${y}px, 0)`,
       )
     }
 
-    const hide = () => {
-      hasShown = false
+    function hide() {
       setVisible(false)
+      hasShown = false
+    }
+
+    function handleMouseOut(e: MouseEvent) {
+      if (!e.relatedTarget) {
+        hide()
+      }
     }
 
     window.addEventListener('mousemove', move)
+    window.addEventListener('mouseout', handleMouseOut)
     window.addEventListener('blur', hide)
-    window.addEventListener('mouseout', hide)
 
     return () => {
       window.removeEventListener('mousemove', move)
+      window.removeEventListener('mouseout', handleMouseOut)
       window.removeEventListener('blur', hide)
-      document.removeEventListener('mouseout', hide)
     }
   }, [])
 
