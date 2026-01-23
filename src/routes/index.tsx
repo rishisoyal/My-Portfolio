@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 import { ImArrowRight2 } from 'react-icons/im'
 
 export const Route = createFileRoute('/')({

@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import '../styles/portfolio.css'
 import { useEffect, useState } from 'react'
-import { Popup } from '@/components/ui'
 import { IoCodeSlash } from 'react-icons/io5'
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
 import { IoMdInformationCircleOutline } from 'react-icons/io'
+import { Popup } from '@/components/ui'
 
 export const Route = createFileRoute('/portfolio')({
   component: RouteComponent,
@@ -16,11 +16,11 @@ interface Portfolio {
   img?: string
   public_url?: string
   github?: string
-  techStack?: string[]
+  techStack?: Array<string>
 }
 
 function RouteComponent() {
-  const portfolios: Portfolio[] = [
+  const portfolios: Array<Portfolio> = [
     {
       name: 'Weather App',
       desc: 'A sleek, modern web application that displays current weather and 3-day forecast for any city using the WeatherAPI API. Users can also get local weather data automatically via IP address.',

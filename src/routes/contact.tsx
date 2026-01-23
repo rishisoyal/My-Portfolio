@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState, type ChangeEvent, type FormEvent } from 'react'
+import { useState } from 'react'
 import {
   FaGithub,
   FaLinkedin,
@@ -9,6 +9,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa'
 import { IoMdMailOpen } from 'react-icons/io'
+import type { ChangeEvent, FormEvent } from 'react'
 
 export const Route = createFileRoute('/contact')({
   component: RouteComponent,

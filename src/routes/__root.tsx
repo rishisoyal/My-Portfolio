@@ -1,16 +1,20 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import 'animate.css'
-import { Header, CustomCursor, AnimatedRoutes } from '@/components/ui'
+import aos from 'aos'
+import { AnimatedRoutes, CustomCursor, Header } from '@/components/ui'
 
 export const Route = createRootRoute({
-  component: () => (
-    <>
-      <CustomCursor />
-      <Header />
+  component: () => {
+    aos.init()
+    return (
+      <>
+        <CustomCursor />
+        <Header />
 
-      <AnimatedRoutes>
-        <Outlet />
-      </AnimatedRoutes>
-    </>
-  ),
+        <AnimatedRoutes>
+          <Outlet />
+        </AnimatedRoutes>
+      </>
+    )
+  },
 })

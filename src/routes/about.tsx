@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { buildStyles, CircularProgressbar } from 'react-circular-progressbar'
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import { LuBriefcaseBusiness } from 'react-icons/lu'
 import { MdOutlineFileDownload } from 'react-icons/md'
@@ -102,7 +102,13 @@ function RouteComponent() {
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#cdd6f4]">GitHub:</span>
-                      <a href='https://github.com/rishisoyal' target='_blank' className="">rishisoyal</a>
+                      <a
+                        href="https://github.com/rishisoyal"
+                        target="_blank"
+                        className=""
+                      >
+                        rishisoyal
+                      </a>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#cdd6f4]">Languages:</span>
