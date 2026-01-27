@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 
 @font-face {
@@ -20,10 +21,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none;
-  background-color: #11111b;
-  color: white;
+  /* background-color: #dce0e8; */
+  /* color: black; */
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+html {
+  color: black !important;
+  background-color: #dce0e8 !important;
+  transition: all .3s;
+}
+
+html.dark {
+  color: white !important;
+  background-color: #11111b !important;
 }
 
 p {
@@ -59,12 +71,20 @@ svg text {
 .primary-btn::before {
   content: '';
   width: 100%;
-  background-color: #5160b2;
+  background-color: #7287fd;
   position: absolute;
   inset: 0;
   z-index: -1;
   transform: translateX(100%);
   transition: all .5s ease-out;
+}
+
+html.dark .primary-btn::before {
+  background-color: #5160b2;
+}
+
+html.dark .primary-btn {
+  border: 2px solid #5160b2;
 }
 
 .primary-btn:hover {

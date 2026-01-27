@@ -3,12 +3,14 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import { LuBriefcaseBusiness } from 'react-icons/lu'
 import { MdOutlineFileDownload } from 'react-icons/md'
+import { useTheme } from '@/store'
 
 export const Route = createFileRoute('/about')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
+  const isDark = useTheme((s) => s.isDark)
   const skills = [
     {
       name: 'HTML',
@@ -69,39 +71,57 @@ function RouteComponent() {
                 <div className="flex flex-col gap-6 w-full justify-around">
                   <div className="grid grid-cols-2 gap-4 justify-around w-full">
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">First Name:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        First Name:
+                      </span>
                       <span className="">Rishi</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">Last Name:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Last Name:
+                      </span>
                       <span className="">Soyal</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">Age:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Age:
+                      </span>
                       <span className="">21 Years</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">Nationality:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Nationality:
+                      </span>
                       <span className="">Indian</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">Freelance:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Freelance:
+                      </span>
                       <span className="text-green-400">Available</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">Address:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Address:
+                      </span>
                       <span className="">357, Laxmi Narayan Puri, Jaipur</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">Phone:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Phone:
+                      </span>
                       <span className="">+91 6367830221</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1 flex-wrap">
-                      <span className="text-[#cdd6f4]">Email:</span>
-                      <span className="text-wrap">rishisoyal510@gmail.com</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Email:
+                      </span>
+                      <a href='mailto:rishisoyal510@gmail.com' className="text-wrap break-all">rishisoyal510@gmail.com</a>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">GitHub:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        GitHub:
+                      </span>
                       <a
                         href="https://github.com/rishisoyal"
                         target="_blank"
@@ -111,13 +131,15 @@ function RouteComponent() {
                       </a>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#cdd6f4]">Languages:</span>
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                        Languages:
+                      </span>
                       <span className="">English, Hindi</span>
                     </div>
                   </div>
                   <button className="primary-btn rounded-full before:rounded-full mb-12">
                     <span className="font-semibold">DOWNLOAD CV</span>
-                    <span className="rounded-full bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">
+                    <span className="rounded-full bg-[#7287fd] dark:bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">
                       <MdOutlineFileDownload size={30} />
                     </span>
                   </button>
@@ -185,8 +207,8 @@ function RouteComponent() {
 
                       // Colors
                       pathColor: `#5160b2`,
-                      textColor: '#cdd6f4',
-                      trailColor: '#45475a',
+                      textColor: `${isDark ? '#cdd6f4' : '#7287fd'}`,
+                      trailColor: `${isDark ? '#45475a' : '#99A1AF'}`,
                       backgroundColor: '#ffffff',
                     })}
                   />
@@ -215,12 +237,12 @@ function RouteComponent() {
                   <div className="flex flex-col items-center justify-center">
                     <span className="p-2 bg-[#5160b2] rounded-full">
                       {' '}
-                      <LuBriefcaseBusiness size={30} />
+                      <LuBriefcaseBusiness size={30} color={isDark? "black": "white"} />
                     </span>
                     <span className="w-1 h-full bg-gray-500"></span>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <div className="bg-gray-700 w-fit px-2 rounded-full text-gray-200 text-sm">
+                    <div className="bg-gray-400 dark:bg-gray-700 w-fit px-2 rounded-full dark:text-gray-200 text-sm">
                       2018-present
                     </div>
                     <h2 className="text-xl">WEB DEVELOPER</h2>

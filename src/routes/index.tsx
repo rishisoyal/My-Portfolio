@@ -10,12 +10,12 @@ function RouteComponent() {
     <>
       <title>Rishi Soyal - Home</title>
 
-      <main className="overflow-hidden relative min-h-screen mb-14 lg:mb-0">
-        <div className="bg-[#1e1e2e] absolute h-[200%] w-full -rotate-15 -left-[73%] -top-1/2 -z-1 hidden lg:block animate__animated animate__slideInLeft"></div>
+      <main className="overflow-hidden relative min-h-screen mb-14 lg:mb-0 flex items-center justify-center">
+        <div className="bg-[#8caaee] dark:bg-[#1e1e2e] transition-colors duration-300 absolute h-[200%] w-full -rotate-15 -left-[73%] -top-1/2 -z-1 hidden lg:block animate__animated animate__slideInLeft"></div>
         <div
           data-aos="fade-up"
           data-aos-duration="1600"
-          className="p-8 flex gap-6 flex-col lg:flex-row items-center justify-around animate__animated animate__fadeInUp"
+          className="p-8 w-full flex gap-6 flex-col lg:flex-row items-center justify-around animate__animated animate__fadeInUp"
         >
           <div
             id="hero-img"
@@ -40,7 +40,7 @@ function RouteComponent() {
                 </div>
               </div>
               <div className="p-4 pt-0 md:w-180 lg:w-130 w-screen">
-                <p className="text-wrap leading-8 text-center lg:text-left w-full lg:w-150 sm:text-[18px] text-[#cdd6f4] ">
+                <p className="text-wrap leading-8 text-center lg:text-left w-full lg:w-150 sm:text-[18px] text-[#232634] dark:text-[#cdd6f4] ">
                   I'm an India based full-stack web developer focused on
                   crafting clean & user-friendly experiences, I am passionate
                   about building excellent software that improves the lives of
@@ -51,7 +51,7 @@ function RouteComponent() {
                 <Link to="/about" className="w-max h-max">
                   <button className="rounded-full primary-btn before:rounded-full">
                     <span className="font-semibold">MORE ABOUT ME</span>
-                    <span className="absolute right-0 rounded-full bg-[#5160b2] w-14 h-14 flex items-center justify-center text-xl">
+                    <span className="absolute right-0 rounded-full bg-[#7287fd] dark:bg-[#5160b2] w-14 h-14 flex items-center justify-center text-xl">
                       <ImArrowRight2 size={25} />
                     </span>
                   </button>
@@ -60,7 +60,7 @@ function RouteComponent() {
             </div>
           </div>
         </div>
-        <div className="bg-[#1e1e2e] absolute h-[200%] w-full -rotate-15 -right-[73%] -bottom-1/2 -z-1 hidden lg:block animate__animated animate__slideInRight"></div>
+        <div className="bg-[#8caaee] dark:bg-[#1e1e2e] transition-colors duration-300 absolute h-[200%] w-full -rotate-15 -right-[73%] -bottom-1/2 -z-1 hidden lg:block animate__animated animate__slideInRight"></div>
       </main>
     </>
   )

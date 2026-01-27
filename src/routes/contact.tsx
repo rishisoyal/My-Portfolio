@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa'
 import { IoMdMailOpen } from 'react-icons/io'
 import type { ChangeEvent, FormEvent } from 'react'
+import '../styles/contact.css'
 
 export const Route = createFileRoute('/contact')({
   component: RouteComponent,
@@ -56,7 +57,7 @@ function RouteComponent() {
                   <div className="text-3xl font-bold w-full flex items-center justify-start py-2">
                     <h2>DON'T BE SHY!</h2>
                   </div>
-                  <p className="text-left text-wrap text-[#cdd6f4]">
+                  <p className="text-left text-wrap dark:text-[#cdd6f4]">
                     Feel free to get in touch with me. I am always open to
                     discussing new projects, creative ideas or opportunities to
                     be part of your visions.
@@ -69,7 +70,7 @@ function RouteComponent() {
                       <FaMap size={30} />
                     </div>
                     <div className="flex flex-col">
-                      <h5 className="text-gray-400">ADDRESS POINT</h5>
+                      <h5 className="text-gray-500 dark:text-gray-400">ADDRESS POINT</h5>
                       <p className="text-[14px]">
                         357, Laxmi Narayan Puri, Jaipur, Rajasthan, India
                       </p>
@@ -80,7 +81,7 @@ function RouteComponent() {
                       <IoMdMailOpen size={30} />
                     </div>
                     <div className="flex flex-col">
-                      <h5 className="text-gray-400">MAIL ME</h5>
+                      <h5 className="text-gray-500 dark:text-gray-400">MAIL ME</h5>
                       <a
                         href="mailto:rishisoyal510@gmail.com"
                         className="text-[14px]"
@@ -94,7 +95,7 @@ function RouteComponent() {
                       <FaPhoneAlt size={30} />
                     </div>
                     <div className="flex flex-col">
-                      <h5 className="text-gray-400">CALL ME</h5>
+                      <h5 className="text-gray-500 dark:text-gray-400">CALL ME</h5>
                       <a href="tel:+91 6367830221" className="text-[14px]">
                         +91 6367830221
                       </a>
@@ -102,31 +103,33 @@ function RouteComponent() {
                   </div>
                 </div>
                 {/* Social media */}
-                <div className="flex gap-4 py-2">
+                <div className="socials flex gap-4 py-2">
                   <span>
                     <a
                       href="https://github.com/rishisoyal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-[#313244] rounded-full grid place-content-center hover:bg-[#5160b2] transition-all duration-500"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500"
                     >
                       <FaGithub size={20} />
                     </a>
                   </span>
-                  <a
-                    href="https://www.linkedin.com/in/rishisoyal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-[#313244] rounded-full grid place-content-center hover:bg-[#5160b2] transition-all duration-500"
-                  >
-                    <FaLinkedin size={20} />
-                  </a>
+                  <span>
+                    <a
+                      href="https://www.linkedin.com/in/rishisoyal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500"
+                    >
+                      <FaLinkedin size={20} />
+                    </a>
+                  </span>
                   <span>
                     <a
                       href="https://www.youtube.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-[#313244] rounded-full grid place-content-center hover:bg-[#5160b2] transition-all duration-500"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500"
                     >
                       <FaYoutube size={20} />
                     </a>
@@ -149,7 +152,7 @@ function RouteComponent() {
                         id="name"
                         required={true}
                         placeholder="YOUR NAME"
-                        className="p-3 sm:py-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
+                        className="p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
                       />
                       <input
                         onChange={handleFormChange}
@@ -159,7 +162,7 @@ function RouteComponent() {
                         id="email"
                         required={true}
                         placeholder="YOUR EMAIL"
-                        className="p-3 sm:py-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
+                        className="p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
                       />
                     </div>
                     <div className="w-full lg:p-2 py-1  flex-col md:flex-row">
@@ -171,7 +174,7 @@ function RouteComponent() {
                         id="subject"
                         required={true}
                         placeholder="YOUR SUBJECT"
-                        className="p-3 sm:py-4 px-6 rounded-full bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
+                        className="p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
                       />
                     </div>
                     <div className="w-full lg:p-2 py-1">
@@ -182,14 +185,14 @@ function RouteComponent() {
                         id="message"
                         required={true}
                         placeholder="YOUR MESSSAGE"
-                        className="p-3 sm:py-4 px-6 rounded-4xl bg-[#313244] text-white w-full outline-none text-[14px] sm:text-[16px] min-h-40 border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
+                        className="p-3 sm:py-4 px-6 rounded-4xl bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] min-h-40 border-2 border-transparent focus:border-[#5160b2] transition-border duration-200"
                         rows={5}
                       ></textarea>
                     </div>
                     <div className="w-full px-4 flex flex-col md:flex-row">
                       <button className="primary-btn rounded-full before:rounded-full">
                         <span className="font-semibold">SEND MESSAGE</span>
-                        <span className="rounded-full bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">
+                        <span className="rounded-full bg-[#7287fd] dark:bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">
                           <FaPaperPlane size={20} />
                         </span>
                       </button>

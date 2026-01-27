@@ -12,11 +12,15 @@ header ul li a h2 {
 }
 
 header ul li a {
-  transition: all .5s;
+  transition: all .3s;
+}
+
+html.dark header ul li a:hover {
+  background-color: #5160b2;
 }
 
 header ul li a:hover {
-  background-color: #5160b2;
+  background-color: #7287fd;
 }
 
 header ul li a:hover h2 {

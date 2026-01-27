@@ -1,0 +1,4 @@
+.socials span a:hover{
+  transform: translateY(-4px);
+  transition: all .3s ease-in-out;
+}

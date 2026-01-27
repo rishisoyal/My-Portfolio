@@ -182,7 +182,7 @@ function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
               {' '}
               <IoCodeSlash size={25} />{' '}
               <span className="text-nowrap">Tech Stack: </span>
-              <strong className="text-[#cdd6f4] flex flex-wrap">
+              <strong className="text-[#5160b2] dark:text-[#cdd6f4] flex flex-wrap">
                 {portfolio.techStack?.join(', ')}
               </strong>
             </div>
@@ -203,7 +203,7 @@ function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
               {' '}
               <IoMdInformationCircleOutline size={25} /> About this project:
             </div>
-            <p className="text-[#cdd6f4]">{portfolio.desc}</p>
+            <p className="text-[#5160b2] dark:text-[#cdd6f4]">{portfolio.desc}</p>
           </div>
         </div>
 
