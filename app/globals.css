@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+::selection {
+  background-color: #5160b2;
+  color: whitesmoke;
+}
+
+body {
+  font-family: "Poppins";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+  /* background-color: #dce0e8; */
+  /* color: black; */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html {
+  color: black !important;
+  background-color: #dce0e8 !important;
+  transition: all .3s;
+}
+
+html.dark {
+  color: white !important;
+  background-color: #11111b !important;
+}
+
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+svg text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: .3rem;
+  padding: 1rem;
+  overflow: hidden;
+  margin-top: 16px;
+  position: relative;
+  background: transparent;
+  width: 15rem;
+  border: 2px solid #5160b2;
+  transition: all .5s;
+}
+
+.primary-btn span {
+  margin-left: -40px;
+}
+
+.primary-btn::before {
+  content: '';
+  width: 100%;
+  background-color: #7287fd;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(100%);
+  transition: all .5s ease-out;
+}
+
+html.dark .primary-btn::before {
+  background-color: #5160b2;
+}
+
+html.dark .primary-btn {
+  border: 2px solid #5160b2;
+}
+
+.primary-btn:hover {
+  transform: translateX(12px);
+}
+
+.primary-btn:hover::before {
+  transform: translateX(0%);
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+#hero-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: max-content;
+  height: max-content; */
+  border-radius: 30px;
+}
+
+#hero-img img {
+  border-radius: 30px;
+
+}
+
+@media (max-width: 1024px) {
+
+  #hero-img,
+  #hero-img img {
+    border-radius: 100%;
+  }
+}
+
+#hero-img::before,
+#hero-img::after {
+  content: '';
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  animation: border-spin 8s linear 0s infinite;
+  scale: 100.5%;
+  filter: blur(10px);
+}
+
+#hero-img::after {
+  background: conic-gradient(from calc(var(--angle) + 100deg), transparent 70%, #5160b2, transparent);
+}
+
+#hero-img::before {
+  background: conic-gradient(from calc(var(--angle) - 90deg), transparent 70%, #5160b2, transparent);
+}
+
+@keyframes border-spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+
+@media (max-width : 720px) {
+  body {
+    cursor: default;
+  }
+
+  #cursor,
+  #trail {
+    display: none;
+  }
+}
