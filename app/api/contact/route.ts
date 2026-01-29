@@ -24,9 +24,10 @@ export async function POST(req: NextRequest) {
       subject: subject || "New Contact Message",
       replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      
     });
 
-    return NextResponse.json({ success: true, message: "Successfully sent your message"}, { status: 200 });
+    return NextResponse.json({ success: true, message: "Successfully sent email"}, { status: 200 });
   } catch {
     return NextResponse.json({ error: "Email failed" }, { status: 500 });
   }

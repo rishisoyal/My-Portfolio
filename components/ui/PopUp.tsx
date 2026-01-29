@@ -12,7 +12,7 @@ interface Props {
 export default function Popup({ isOpen, onClose, children }: Props) {
   if (typeof document === 'undefined') return null
 
-  // render in seperate DOM
+  // render in separate DOM
   return createPortal(
     <AnimatePresence>
       {isOpen && (

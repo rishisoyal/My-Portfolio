@@ -1,50 +1,6 @@
-'use client'
-
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
-import 'react-circular-progressbar/dist/styles.css'
-import { LuBriefcaseBusiness } from 'react-icons/lu'
-import { MdOutlineFileDownload } from 'react-icons/md'
-import { useTheme } from '@/store'
-
+import { ResumeDownloadButton, ExperienceEducation, Skills } from "./_components";
 
 export default function Page() {
-  const isDark = useTheme((s) => s.isDark)
-  const skills = [
-    {
-      name: 'HTML',
-      level: 70,
-    },
-    {
-      name: 'JavaScript',
-      level: 85,
-    },
-    {
-      name: 'CSS',
-      level: 70,
-    },
-    {
-      name: 'ReactJS',
-      level: 70,
-    },
-    {
-      name: 'Python',
-      level: 60,
-    },
-    {
-      name: 'NextJS',
-      level: 50,
-    },
-    {
-      name: 'TypeScript',
-      level: 70,
-    },
-    {
-      name: 'NodeJS',
-      level: 80,
-    },
-  ]
-  const experienceEducation = [1, 2, 3, 4, 5, 6]
-
   return (
     <>
       <title>Rishi Soyal - About</title>
@@ -96,7 +52,9 @@ export default function Page() {
                       <span className="text-[#7287fd] dark:text-[#cdd6f4]">
                         Freelance:
                       </span>
-                      <span className="text-green-400">Available</span>
+                      <span className="text-green-600 dark:text-green-400">
+                        Available
+                      </span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#7287fd] dark:text-[#cdd6f4]">
@@ -114,7 +72,12 @@ export default function Page() {
                       <span className="text-[#7287fd] dark:text-[#cdd6f4]">
                         Email:
                       </span>
-                      <a href='mailto:rishisoyal510@gmail.com' className="text-wrap break-all">rishisoyal510@gmail.com</a>
+                      <a
+                        href="mailto:rishisoyal510@gmail.com"
+                        className="text-wrap break-all"
+                      >
+                        rishisoyal510@gmail.com
+                      </a>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#7287fd] dark:text-[#cdd6f4]">
@@ -135,12 +98,7 @@ export default function Page() {
                       <span className="">English, Hindi</span>
                     </div>
                   </div>
-                  <button className="primary-btn rounded-full before:rounded-full mb-12">
-                    <span className="font-semibold">DOWNLOAD CV</span>
-                    <span className="rounded-full bg-[#7287fd] dark:bg-[#5160b2] w-14 h-14 right-0 absolute flex items-center justify-center text-xl">
-                      <MdOutlineFileDownload size={30} />
-                    </span>
-                  </button>
+                  <ResumeDownloadButton/>
                 </div>
               </div>
             </div>
@@ -172,88 +130,22 @@ export default function Page() {
           </div>
         </section>
         <section className="flex flex-col items-center justify-center min-h-screen">
-          <div className="flex items-center justify-center w-full py-6">
+          <div className="flex items-center justify-center w-full py-8">
             <h2 data-aos="fade-down" className="text-2xl sm:text-4xl font-bold">
               MY SKILLS
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 w-4/5 p-0 sm:p-2 gap-8 items-center place-content-center justify-items-center">
-            {skills.map((skill, i) => (
-              <div
-                key={i}
-                data-aos={i % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
-                className="w-full max-w-44 flex flex-col items-center justify-center"
-              >
-                <div className="w-full flex items-center justify-center">
-                  <CircularProgressbar
-                    value={skill.level}
-                    text={`${skill.level}%`}
-                    className="text-center flex items-center justify-center"
-                    styles={buildStyles({
-                      // Rotation of path and trail, in number of turns (0-1)
-                      rotation: 0.25,
-                      strokeLinecap: 'round',
-
-                      // Text size
-                      textSize: '16px',
-
-                      // How long animation takes to go from one percentage to another, in seconds
-                      pathTransitionDuration: 0.5,
-
-                      // Can specify path transition in more detail, or remove it entirely
-                      // pathTransition: 'none',
-
-                      // Colors
-                      pathColor: `#5160b2`,
-                      textColor: `${isDark ? '#cdd6f4' : '#7287fd'}`,
-                      trailColor: `${isDark ? '#45475a' : '#99A1AF'}`,
-                      backgroundColor: '#ffffff',
-                    })}
-                  />
-                </div>
-                <div className="w-full flex items-center justify-center p-2 sm:p-4">
-                  <h2 className="text-xl">{skill.name}</h2>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Skills />
         </section>
         <section className="min-h-screen">
-          <div className="flex items-center justify-center w-full pt-12 pb-4">
+          <div className="flex items-center justify-center w-full pt-15 pb-4">
             <h2 data-aos="fade-down" className="text-2xl sm:text-4xl font-bold">
               EXPERIENCE & EDUCATION
             </h2>
           </div>
-          <div className="w-full flex items-center justify-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-3 sm:p-8 w-full lg:w-400 place-items-center">
-              {experienceEducation.map((_val, i) => (
-                <div
-                  key={i}
-                  data-aos={i % 2 === 0 ? 'fade-down-right' : 'fade-down-left'}
-                  className="flex gap-4 p-4 w-full lg:w-fit"
-                >
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="p-2 bg-[#5160b2] rounded-full">
-                      {' '}
-                      <LuBriefcaseBusiness size={30} color={isDark? "black": "white"} />
-                    </span>
-                    <span className="w-1 h-full bg-gray-500"></span>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="bg-gray-400 dark:bg-gray-700 w-fit px-2 rounded-full dark:text-gray-200 text-sm">
-                      2018-present
-                    </div>
-                    <h2 className="text-xl">WEB DEVELOPER</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ExperienceEducation />
         </section>
       </main>
     </>
-  )
+  );
 }
