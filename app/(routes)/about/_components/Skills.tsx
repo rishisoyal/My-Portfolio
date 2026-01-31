@@ -59,7 +59,6 @@ const Skills = () => {
         <div
           key={skill.name}
           data-aos="fade-up"
-          // data-aos-delay={`${i * 500}`}
           className="w-full max-w-44 flex flex-col items-center justify-center"
         >
           <div className="w-full flex items-center justify-center">

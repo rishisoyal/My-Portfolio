@@ -14,7 +14,7 @@ export default function Page() {
     <>
       <title>Rishi Soyal - Contact</title>
 
-      <main className="mb-18 lg:mb-0">
+      <main className="mb-18 lg:mb-0 flex items-center justify-center lg:h-screen">
         <section className="flex flex-col p-3 sm:p-8 justify-center gap-8 w-full">
           <div className="h-24 w-full flex items-center justify-center">
             <div className="text-6xl sm:text-9xl absolute opacity-15 font-bold -z-9 text-center flex items-center justify-center animate__animated animate__zoomIn">

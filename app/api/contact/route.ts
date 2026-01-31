@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+interface RequestBody {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  company: string | null;
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
@@ -8,9 +16,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Method not allowed" }, { status: 405 });
   }
 
-  const { name, email, subject, message, company } = await req.json();
-  console.log(name, company);
-  
+  const { name, email, subject, message, company }: RequestBody =
+    await req.json();
 
   // Honeypot
   if (company) return NextResponse.json({ ok: true }, { status: 200 });

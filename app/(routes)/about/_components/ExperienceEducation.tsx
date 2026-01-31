@@ -29,7 +29,7 @@ const ExperienceEducation = () => {
         {experienceEducation.map((data, i) => (
           <div
             key={i}
-            data-aos={i % 2 === 0 ? "fade-down-right" : "fade-down-left"}
+            data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
             className="flex gap-4 p-4 w-full "
           >
             <div className="flex flex-col items-center justify-center">

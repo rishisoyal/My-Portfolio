@@ -90,7 +90,25 @@ const Form = () => {
   ) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormError((prev) => ({ ...prev, [name]: "" }));
   }
+
+  const toolTipSlotProps = {
+    tooltip: {
+      sx: {
+        bgcolor: "#d20f3982",
+        color: "#fff",
+        fontSize: "14px",
+        border: "1px solid #d20f39",
+      },
+    },
+    arrow: {
+      sx: {
+        color: "#d20f3982",
+      },
+    },
+  };
+
   return (
     <div className="w-full">
       <form onSubmit={handleFormSubmit} className="flex flex-col gap-2">
@@ -99,21 +117,7 @@ const Form = () => {
             title={formError.name}
             open={!!formError.name}
             arrow
-            slotProps={{
-              tooltip: {
-                sx: {
-                  bgcolor: "#d20f3982",
-                  color: "#fff",
-                  fontSize: "14px",
-                  border: "1px solid #d20f39",
-                },
-              },
-              arrow: {
-                sx: {
-                  color: "#d20f3982",
-                },
-              },
-            }}
+            slotProps={toolTipSlotProps}
           >
             <input
               onChange={handleFormChange}
@@ -131,21 +135,7 @@ const Form = () => {
             title={formError.email}
             open={!!formError.email}
             arrow
-            slotProps={{
-              tooltip: {
-                sx: {
-                  bgcolor: "#d20f3982",
-                  color: "#fff",
-                  fontSize: "14px",
-                  border: "1px solid #d20f39",
-                },
-              },
-              arrow: {
-                sx: {
-                  color: "#d20f3982",
-                },
-              },
-            }}
+            slotProps={toolTipSlotProps}
           >
             <input
               onChange={handleFormChange}
@@ -164,21 +154,7 @@ const Form = () => {
             title={formError.subject}
             open={!!formError.subject}
             arrow
-            slotProps={{
-              tooltip: {
-                sx: {
-                  bgcolor: "#d20f3982",
-                  color: "#fff",
-                  fontSize: "14px",
-                  border: "1px solid #d20f39",
-                },
-              },
-              arrow: {
-                sx: {
-                  color: "#d20f3982",
-                },
-              },
-            }}
+            slotProps={toolTipSlotProps}
           >
             <input
               onChange={handleFormChange}
@@ -197,21 +173,7 @@ const Form = () => {
             title={formError.message}
             open={!!formError.message}
             arrow
-            slotProps={{
-              tooltip: {
-                sx: {
-                  bgcolor: "#d20f3982",
-                  color: "#fff",
-                  fontSize: "14px",
-                  border: "1px solid #d20f39",
-                },
-              },
-              arrow: {
-                sx: {
-                  color: "#d20f3982",
-                },
-              },
-            }}
+            slotProps={toolTipSlotProps}
           >
             <textarea
               onChange={handleFormChange}
