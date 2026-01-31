@@ -22,8 +22,8 @@ export default function Page() {
                 PERSONAL INFO
               </h2>
               <div className="flex gap-6 w-full">
-                <div className="flex flex-col gap-6 w-full justify-around">
-                  <div className="grid grid-cols-2 gap-4 justify-around w-full">
+                <div className="flex flex-col gap-6 justify-around">
+                  <div className="grid grid-cols-2 gap-4 justify-around">
                     <div className="flex flex-col sm:flex-row sm:gap-1">
                       <span className="text-[#7287fd] dark:text-[#cdd6f4]">
                         First Name:

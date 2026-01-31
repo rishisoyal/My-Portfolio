@@ -9,6 +9,8 @@ export async function POST(req: NextRequest) {
   }
 
   const { name, email, subject, message, company } = await req.json();
+  console.log(name, company);
+  
 
   // Honeypot
   if (company) return NextResponse.json({ ok: true }, { status: 200 });
@@ -18,17 +20,28 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await resend.emails.send({
+    const res = await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
       to: [process.env.TO_EMAIL!],
       subject: subject || "New Contact Message",
       replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-      
     });
 
-    return NextResponse.json({ success: true, message: "Successfully sent email"}, { status: 200 });
-  } catch {
-    return NextResponse.json({ error: "Email failed" }, { status: 500 });
+    if (res.error)
+      return NextResponse.json(
+        { error: res.error.message },
+        { status: res.error.statusCode || 500 },
+      );
+
+    return NextResponse.json(
+      { success: true, message: "Successfully sent email" },
+      { status: 200 },
+    );
+  } catch (error: unknown) {
+    return NextResponse.json(
+      { error: (error as Error).message },
+      { status: 500 },
+    );
   }
 }

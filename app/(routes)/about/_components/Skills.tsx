@@ -39,14 +39,27 @@ const Skills = () => {
       name: "NodeJS",
       level: 80,
     },
+    {
+      name: "TailwindCSS",
+      level: 70,
+    },
+    {
+      name: "ExpressJS",
+      level: 80,
+    },
+    {
+      name: "Git",
+      level: 50,
+    },
   ];
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 w-4/5 p-0 sm:p-2 gap-8 items-center place-content-center justify-items-center">
-      {skills.map((skill, i) => (
+      {skills.map((skill) => (
         <div
-          key={i}
-          data-aos={i % 2 === 0 ? "fade-up-right" : "fade-up-left"}
+          key={skill.name}
+          data-aos="fade-up"
+          // data-aos-delay={`${i * 500}`}
           className="w-full max-w-44 flex flex-col items-center justify-center"
         >
           <div className="w-full flex items-center justify-center">
