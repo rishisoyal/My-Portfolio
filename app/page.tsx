@@ -16,13 +16,13 @@ export default function Page() {
         >
           <div
             id="hero-img"
-            className="w-60 h-60 sm:w-80 sm:h-80 lg:rounded-2xl lg:w-lg lg:h-162 lg:mt-4 rounded-[10px] lg:border-0"
+            className="relative w-60 h-60 sm:w-80 sm:h-80 lg:rounded-2xl lg:w-lg lg:h-162 lg:mt-4 rounded-[10px] lg:border-0"
           >
             <Image
               priority={true}
               src="/home_1.avif"
               alt="HERO IMAGE"
-              className="max-w-full min-w-full min-h-full max-h-full object-cover rounded-[10px]"
+              className="object-cover rounded-[10px]"
               fill={true}
             />
           </div>

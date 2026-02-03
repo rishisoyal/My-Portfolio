@@ -15,7 +15,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
         <div className="p-4 flex flex-col ga-4 text-sm sm:text-[1rem]">
           <div className="flex flex-wrap">
             <div className="flex items-center gap-2 p-2">
-              <span className="p-2 bg-gray-400 dark:bg-gray-700 rounded-full">
+              <span className="p-2 bg-gray-300 dark:bg-gray-700 rounded-full">
                 <IoCodeSlash />{" "}
               </span>
               <span className="text-nowrap">Tech Stack: </span>
@@ -25,7 +25,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
             </div>
             {portfolio.public_url && (
               <div className="flex items-center gap-2 p-2">
-                <span className="p-2 bg-gray-400 dark:bg-gray-700 rounded-full">
+                <span className="p-2 bg-gray-300 dark:bg-gray-700 rounded-full">
                   <FaArrowUpRightFromSquare />
                 </span>
                 Preview:
@@ -39,7 +39,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
               </div>
             )}
             <div className="flex items-center gap-2 p-2">
-              <span className="p-2 bg-gray-400 dark:bg-gray-700 rounded-full">
+              <span className="p-2 bg-gray-300 dark:bg-gray-700 rounded-full">
                 <FaGithub />
               </span>
               GitHub:
@@ -54,7 +54,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
           </div>
           <div className="flex items-center gap-2 p-2 flex-col justify-start">
             <div className="flex gap-2 w-full">
-              <span className="p-2 bg-gray-400 dark:bg-gray-700 rounded-full">
+              <span className="p-2 bg-gray-300 dark:bg-gray-700 rounded-full">
                 <IoMdInformationCircleOutline />
               </span>
               About this project:

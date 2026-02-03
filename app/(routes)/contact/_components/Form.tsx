@@ -141,7 +141,7 @@ const Form = () => {
             <input
               onChange={handleFormChange}
               value={formData.email}
-              type="email"
+              type="text"
               name="email"
               id="email"
               required={true}
