@@ -19,12 +19,11 @@ export default function Page() {
             className="w-60 h-60 sm:w-80 sm:h-80 lg:rounded-2xl lg:w-lg lg:h-162 lg:mt-4 rounded-[10px] lg:border-0"
           >
             <Image
-              priority
+              priority={true}
               src="/home_1.avif"
               alt="HERO IMAGE"
               className="max-w-full min-w-full min-h-full max-h-full object-cover rounded-[10px]"
-              width={1166}
-              height={1200}
+              fill={true}
             />
           </div>
           <div className="flex flex-col items-center justify-center sm:w-200">
