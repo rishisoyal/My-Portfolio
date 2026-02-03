@@ -57,7 +57,7 @@ export default function Header() {
         />
       ),
     },
-  ];
+  ] as const;
 
   return (
     <>
@@ -87,3 +87,4 @@ export default function Header() {
     </>
   );
 }
+

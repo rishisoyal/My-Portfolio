@@ -1,5 +1,5 @@
-import "../../../styles/portfolio.css";
 import { Projects } from "./_components";
+import './styles/portfolio.css'
 
 export default function Page() {
   return (

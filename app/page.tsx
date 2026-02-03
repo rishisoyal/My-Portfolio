@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { ImArrowRight2 } from 'react-icons/im'
+import Image from "next/image";
+import Link from "next/link";
+import { ImArrowRight2 } from "react-icons/im";
 
 export default function Page() {
   return (
@@ -19,11 +19,12 @@ export default function Page() {
             className="w-60 h-60 sm:w-80 sm:h-80 lg:rounded-2xl lg:w-lg lg:h-162 lg:mt-4 rounded-[10px] lg:border-0"
           >
             <Image
-              src="/home_1.jpg"
+              priority
+              src="/home_1.avif"
               alt=""
               className="max-w-full min-w-full min-h-full max-h-full object-cover rounded-[10px]"
-              width={100}
-              height={100}
+              width={1166}
+              height={1200}
             />
           </div>
           <div className="flex flex-col items-center justify-center sm:w-200">
@@ -62,5 +63,6 @@ export default function Page() {
         <div className="bg-[#8caaee] dark:bg-[#1e1e2e] transition-colors duration-300 absolute h-[200%] w-full -rotate-15 -right-[73%] -bottom-1/2 -z-1 hidden lg:block animate__animated animate__slideInRight"></div>
       </main>
     </>
-  )
+  );
 }
+

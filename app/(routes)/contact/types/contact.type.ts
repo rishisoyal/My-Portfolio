@@ -3,5 +3,5 @@ export interface ContactForm {
   email: string;
   subject: string;
   message: string;
-  company: string | null;
+  company: string | null; // used only for honeypot
 }

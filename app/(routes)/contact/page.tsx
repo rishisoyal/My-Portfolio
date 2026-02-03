@@ -7,7 +7,6 @@ import {
 } from "react-icons/fa";
 import { IoMdMailOpen } from "react-icons/io";
 import { Form } from "./_components";
-import "../../../styles/contact.css";
 
 export default function Page() {
   return (
@@ -91,7 +90,7 @@ export default function Page() {
                       href="https://github.com/rishisoyal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1"
                     >
                       <FaGithub size={20} />
                     </a>
@@ -101,7 +100,7 @@ export default function Page() {
                       href="https://www.linkedin.com/in/rishisoyal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1"
                     >
                       <FaLinkedin size={20} />
                     </a>
@@ -111,7 +110,7 @@ export default function Page() {
                       href="https://www.youtube.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1"
                     >
                       <FaYoutube size={20} />
                     </a>

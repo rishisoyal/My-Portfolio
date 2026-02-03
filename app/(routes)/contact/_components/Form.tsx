@@ -1,17 +1,18 @@
 "use client";
 
-import { useToast } from "@/store";
+import { useTheme, useToast } from "@/store";
 import type { ChangeEvent, SubmitEvent } from "react";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import type { ContactForm } from "../types";
 import { z } from "zod";
-import { Tooltip } from "@mui/material";
+import { Tooltip, TooltipProps } from "@mui/material";
 
 type FormErrors = Partial<Record<keyof ContactForm, string>>;
 
 const Form = () => {
   const { showToast } = useToast();
+  const isDark = useTheme((s) => s.isDark);
   const [formData, setFormData] = useState<ContactForm>({
     name: "",
     email: "",
@@ -93,11 +94,11 @@ const Form = () => {
     setFormError((prev) => ({ ...prev, [name]: "" }));
   }
 
-  const toolTipSlotProps = {
+  const toolTipSlotProps: TooltipProps["slotProps"] = {
     tooltip: {
       sx: {
         bgcolor: "#d20f3982",
-        color: "#fff",
+        color: isDark ? "#fff" : "#000",
         fontSize: "14px",
         border: "1px solid #d20f39",
       },
