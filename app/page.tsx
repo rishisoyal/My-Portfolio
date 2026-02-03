@@ -21,7 +21,7 @@ export default function Page() {
             <Image
               priority
               src="/home_1.avif"
-              alt=""
+              alt="HERO IMAGE"
               className="max-w-full min-w-full min-h-full max-h-full object-cover rounded-[10px]"
               width={1166}
               height={1200}
