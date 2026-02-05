@@ -25,14 +25,19 @@ const Form = () => {
 
   function validateForm() {
     const form = z.object({
-      name: z.string().max(20, "Name can not be more than 20 characters"),
-      email: z.email("Invalid email"),
+      name: z
+        .string()
+        .max(20, "Name can not be more than 20 characters")
+        .nonempty("Name is required"),
+      email: z.email("Invalid email").nonempty("Email is required"),
       subject: z
         .string()
-        .max(100, "Subject can not be more than 100 characters"),
+        .max(100, "Subject can not be more than 100 characters")
+        .nonempty("Subject is required"),
       message: z
         .string()
-        .max(500, "Message can not be more than 500 characters"),
+        .max(500, "Message can not be more than 500 characters")
+        .nonempty("Message is required"),
       company: z.string().or(z.null()),
     });
 
@@ -101,6 +106,7 @@ const Form = () => {
         color: isDark ? "#fff" : "#000",
         fontSize: "14px",
         border: "1px solid #d20f39",
+        cursor: "none"
       },
     },
     arrow: {
@@ -119,7 +125,6 @@ const Form = () => {
             open={!!formError.name}
             arrow
             slotProps={toolTipSlotProps}
-            className="cursor-hover-animation"
           >
             <input
               onChange={handleFormChange}
@@ -128,7 +133,6 @@ const Form = () => {
               type="text"
               name="name"
               id="name"
-              required={true}
               placeholder="YOUR NAME"
               className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.name ? "border-[#d20f3982]" : "border-transparent"}`}
             />
@@ -145,7 +149,6 @@ const Form = () => {
               type="text"
               name="email"
               id="email"
-              required={true}
               placeholder="YOUR EMAIL"
               className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.email ? "border-[#d20f3982]" : "border-transparent"}`}
             />
@@ -164,7 +167,6 @@ const Form = () => {
               type="text"
               name="subject"
               id="subject"
-              required={true}
               placeholder="YOUR SUBJECT"
               className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.subject ? "border-[#d20f3982]" : "border-transparent"}`}
             />
@@ -182,7 +184,6 @@ const Form = () => {
               value={formData.message}
               name="message"
               id="message"
-              required={true}
               placeholder="YOUR MESSAGE"
               className={`p-3 sm:py-4 px-6 rounded-4xl bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] min-h-40 border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.message ? "border-[#d20f3982]" : "border-transparent"}`}
               rows={5}

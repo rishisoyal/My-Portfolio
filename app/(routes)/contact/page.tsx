@@ -20,7 +20,7 @@ export default function Page() {
               CONTACT
             </div>
             <h1 className="text-4xl sm:text-6xl flex items-center justify-center font-bold w-full h-full">
-              GET IN<span className="text-[#5160b2] px-4">TOUCH</span>
+              GET IN<span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">TOUCH</span>
             </h1>
           </div>
           <div className="w-full p-1 lg:p-12 animate__animated animate__fadeInUp">
@@ -32,7 +32,7 @@ export default function Page() {
                   <div className="text-3xl font-bold w-full flex items-center justify-start py-2">
                     <h2>DON&apos;T BE SHY!</h2>
                   </div>
-                  <p className="text-left text-wrap dark:text-[#cdd6f4]">
+                  <p className="text-left text-wrap dark:text-[#cdd6f4] text-shadow-[0px_0px_30px_#5160b2]">
                     Feel free to get in touch with me. I am always open to
                     discussing new projects, creative ideas or opportunities to
                     be part of your visions.
@@ -90,7 +90,7 @@ export default function Page() {
                       href="https://github.com/rishisoyal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0px_0px_30px_#5160b2]"
                     >
                       <FaGithub size={20} />
                     </a>
@@ -100,7 +100,7 @@ export default function Page() {
                       href="https://www.linkedin.com/in/rishisoyal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0px_0px_30px_#5160b2]"
                     >
                       <FaLinkedin size={20} />
                     </a>
@@ -110,7 +110,7 @@ export default function Page() {
                       href="https://www.youtube.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1"
+                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0px_0px_30px_#5160b2]"
                     >
                       <FaYoutube size={20} />
                     </a>

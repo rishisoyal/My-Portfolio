@@ -13,7 +13,7 @@ export default function Page() {
               WORKS
             </div>
             <h1 className="text-4xl sm:text-6xl flex items-center justify-center font-bold w-full h-full">
-              MY<span className="text-[#5160b2] px-4">PORTFOLIOS</span>
+              MY<span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">PORTFOLIOS</span>
             </h1>
           </div>
           <div className="w-full">

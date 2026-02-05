@@ -1,4 +1,8 @@
-import { ResumeDownloadButton, ExperienceEducation, Skills } from "./_components";
+import {
+  ResumeDownloadButton,
+  ExperienceEducation,
+  Skills,
+} from "./_components";
 
 export default function Page() {
   return (
@@ -12,7 +16,7 @@ export default function Page() {
               RESUME
             </div>
             <h1 className="text-4xl sm:text-6xl flex items-center justify-center font-bold w-full h-full">
-              ABOUT<span className="text-[#5160b2] px-4">ME</span>
+              ABOUT<span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">ME</span>
             </h1>
           </div>
           <div className="flex flex-col lg:flex-row justify-center p-3 sm:p-8 w-full gap-2">
@@ -25,31 +29,31 @@ export default function Page() {
                 <div className="flex flex-col gap-6 justify-around">
                   <div className="grid grid-cols-2 gap-4 justify-around">
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         First Name:
                       </span>
                       <span className="">Rishi</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Last Name:
                       </span>
                       <span className="">Soyal</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Age:
                       </span>
                       <span className="">21 Years</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Nationality:
                       </span>
                       <span className="">Indian</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Freelance:
                       </span>
                       <span className="text-green-600 dark:text-green-400">
@@ -57,19 +61,19 @@ export default function Page() {
                       </span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Address:
                       </span>
                       <span className="">357, Laxmi Narayan Puri, Jaipur</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Phone:
                       </span>
                       <span className="">+91 6367830221</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1 flex-wrap">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Email:
                       </span>
                       <a
@@ -80,7 +84,7 @@ export default function Page() {
                       </a>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_20px_#7287fd]">
                         GitHub:
                       </span>
                       <a
@@ -92,13 +96,13 @@ export default function Page() {
                       </a>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1">
-                      <span className="text-[#7287fd] dark:text-[#cdd6f4]">
+                      <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_20px_#7287fd]">
                         Languages:
                       </span>
                       <span className="">English, Hindi</span>
                     </div>
                   </div>
-                  <ResumeDownloadButton/>
+                  <ResumeDownloadButton />
                 </div>
               </div>
             </div>

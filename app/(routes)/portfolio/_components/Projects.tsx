@@ -56,8 +56,8 @@ const Projects = () => {
               width={720}
               height={366}
             />
-            <span className="w-full h-full absolute bg-[#000000] opacity-0 hover:opacity-50 transition-all duration-500 ease-in-out flex items-center justify-center"></span>
-            <h2 className="text-3xl absolute text-center font-semibold text-[#5160b2] brightness-200 opacity-0 top-5 transition-all duration-500 pointer-events-none px-2">
+            <span className="hidden sm:flex w-full h-full absolute bg-[#000000] opacity-0 hover:opacity-50 transition-all duration-500 ease-in-out items-center justify-center"></span>
+            <h2 className="text-2xl absolute text-center font-semibold text-[#5160b2] brightness-200 sm:opacity-0 sm:top-5 transition-all duration-500 pointer-events-none px-2 text-shadow-[0px_0px_30px_#5160b2]">
               {portfolio.name}
             </h2>
           </div>
