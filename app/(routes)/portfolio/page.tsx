@@ -19,13 +19,13 @@ export default function Page() {
           <div className="w-full">
             <div className="w-full flex items-center justify-center p-4 py-8">
               <ul className="flex gap-4 text-[18px]">
-                <li className="cursor-pointer hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
+                <li className="cursor-pointer sm:cursor-none hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
                   All
                 </li>
-                <li className="cursor-pointer hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
+                <li className="cursor-pointer sm:cursor-none hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
                   Websites
                 </li>
-                <li className="cursor-pointer hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
+                <li className="cursor-pointer sm:cursor-none hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
                   Apps
                 </li>
               </ul>

@@ -119,6 +119,7 @@ const Form = () => {
             open={!!formError.name}
             arrow
             slotProps={toolTipSlotProps}
+            className="cursor-hover-animation"
           >
             <input
               onChange={handleFormChange}

@@ -17,7 +17,7 @@ export default function Page() {
           </div>
           <div className="flex flex-col lg:flex-row justify-center p-3 sm:p-8 w-full gap-2">
             {/* Personal info */}
-            <div className="flex flex-col gap-4 w-full lg:w-1/2 animate__animated animate__slideInLeft">
+            <div className="width-transition flex flex-col gap-4 w-full lg:w-1/2 animate__animated animate__slideInLeft">
               <h2 className="text-2xl text-[#5160b2] text-start py-2 w-full">
                 PERSONAL INFO
               </h2>
@@ -110,7 +110,7 @@ export default function Page() {
                   YEARS OF EXPERIENCE
                 </span>
               </div>
-              <div className="flex flex-col items-start justify-center gap-2 w-max-content h-32 p-6 py-12 border-2 border-[#45475a] rounded-xl">
+              <div className="width-transition flex flex-col items-start justify-center gap-2 w-max-content h-32 p-6 py-12 border-2 border-[#45475a] rounded-xl">
                 <span className="font-bold text-4xl text-[#5160b2]">97+</span>
                 <span className="stat-text text-sm sm:text-lg">
                   COMPLETED PROJECTS

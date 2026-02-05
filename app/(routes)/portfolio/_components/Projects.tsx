@@ -46,7 +46,8 @@ const Projects = () => {
           <div
             key={i}
             onClick={() => handlePortfolioClick(i)}
-            className={`card relative rounded-2xl flex items-center justify-center w-full h-55 cursor-pointer overflow-hidden bg-cover transition-all duration-300 ease-in-out bg-center animate__animated animate__slideInLeft animate__delay-${i} border-2 border-[#45475a]`}
+            className={`card relative rounded-2xl flex items-center justify-center w-full h-55 cursor-pointer
+              sm:cursor-none overflow-hidden bg-cover transition-all duration-300 ease-in-out bg-center animate__animated animate__slideInLeft animate__delay-${i} border-2 border-[#45475a]`}
           >
             <Image
               className="w-full h-full bg-cover"

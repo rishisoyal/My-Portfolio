@@ -1,57 +1,129 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null)
-  const trailRef = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const trailRef = useRef<HTMLDivElement>(null);
+  const scaleRef = useRef(1);
+  const lastPos = useRef({ x: 0, y: 0 });
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let hasShown = false
+    let hasShown = false;
+
+    function isCursorScaleTarget(el: Element | null) {
+      if (!el) return false;
+      const tag = el.tagName;
+      if (
+        tag === "INPUT" ||
+        tag === "TEXTAREA" ||
+        tag === "SELECT" ||
+        tag === "A" ||
+        tag === "BUTTON"
+      )
+        return true;
+      try {
+        return !!el.closest && !!el.closest("[data-cursor-scale]");
+      } catch {
+        return false;
+      }
+    }
 
     function move(e: MouseEvent) {
-      const x = e.clientX
-      const y = e.clientY
+      const x = e.clientX;
+      const y = e.clientY;
 
       if (!hasShown) {
-        hasShown = true
-        setVisible(true)
+        hasShown = true;
+        setVisible(true);
       }
 
+      lastPos.current = { x, y };
+
       cursorRef.current?.style.setProperty(
-        'transform',
+        "transform",
         `translate3d(${x}px, ${y}px, 0)`,
-      )
+      );
 
       trailRef.current?.style.setProperty(
-        'transform',
-        `translate3d(${x}px, ${y}px, 0)`,
-      )
+        "transform",
+        `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
+      );
     }
 
     function hide() {
-      setVisible(false)
-      hasShown = false
+      setVisible(false);
+      hasShown = false;
     }
 
     function handleMouseOut(e: MouseEvent) {
       if (!e.relatedTarget) {
-        hide()
+        hide();
       }
     }
 
-    window.addEventListener('mousemove', move)
-    window.addEventListener('mouseout', handleMouseOut)
-    window.addEventListener('blur', hide)
+    function handleMouseDown() {
+      scaleRef.current = 1.2;
+      const { x, y } = lastPos.current;
+      trailRef.current?.style.setProperty(
+        "transform",
+        `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
+      );
+    }
+
+    function handleMouseUp() {
+      scaleRef.current = 1;
+      const { x, y } = lastPos.current;
+      trailRef.current?.style.setProperty(
+        "transform",
+        `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
+      );
+    }
+
+    function handleElementOver(e: MouseEvent) {
+      const el = e.target as Element | null;
+      if (isCursorScaleTarget(el)) {
+        scaleRef.current = 1.2;
+        const { x, y } = lastPos.current;
+        trailRef.current?.style.setProperty(
+          "transform",
+          `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
+        );
+      }
+    }
+
+    function handleElementOut(e: MouseEvent) {
+      const el = e.target as Element | null;
+      if (isCursorScaleTarget(el)) {
+        scaleRef.current = 1;
+        const { x, y } = lastPos.current;
+        trailRef.current?.style.setProperty(
+          "transform",
+          `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
+        );
+      }
+    }
+
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("mouseover", handleElementOver);
+    window.addEventListener("mouseout", handleElementOut);
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseout", handleMouseOut);
+    window.addEventListener("blur", hide);
 
     return () => {
-      window.removeEventListener('mousemove', move)
-      window.removeEventListener('mouseout', handleMouseOut)
-      window.removeEventListener('blur', hide)
-    }
-  }, [])
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseout", handleMouseOut);
+      window.removeEventListener("blur", hide);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("mouseover", handleElementOver);
+      window.removeEventListener("mouseout", handleElementOut);
+    };
+  }, []);
 
   return (
     <AnimatePresence>
@@ -75,5 +147,5 @@ export default function CustomCursor() {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

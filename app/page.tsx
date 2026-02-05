@@ -7,7 +7,7 @@ export default function Page() {
     <>
       <title>Rishi Soyal - Home</title>
 
-      <main className="overflow-hidden relative min-h-screen mb-14 lg:mb-0 flex items-center justify-center">
+      <main className="width-transition overflow-hidden relative min-h-screen mb-14 lg:mb-0 flex items-center justify-center">
         <div className="bg-[#8caaee] dark:bg-[#1e1e2e] transition-colors duration-300 absolute h-[200%] w-full -rotate-15 -left-[73%] -top-1/2 -z-1 hidden lg:block animate__animated animate__slideInLeft"></div>
         <div
           data-aos="fade-up"
@@ -26,7 +26,7 @@ export default function Page() {
               fill={true}
             />
           </div>
-          <div className="flex flex-col items-center justify-center sm:w-200">
+          <div className="width-transition flex flex-col items-center justify-center sm:w-200">
             <div className="flex items-center lg:items-start justify-center flex-col">
               <div className="flex gap-2 items-start justify-center">
                 <div className="flex flex-col items-end p-4 pt-6">

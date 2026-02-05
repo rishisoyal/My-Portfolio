@@ -8,7 +8,7 @@ const ThemeChangeButton = () => {
 
   return (
     <div className="fixed top-0 w-full z-99 flex items-end justify-end right-0 p-4">
-      <button id="theme-btn" className="cursor-pointer" onClick={toggleTheme}>
+      <button id="theme-btn" className="cursor-pointer sm:cursor-none" onClick={toggleTheme}>
         {isDark ? (
           <FaSun size={25} color="#5160b2" />
         ) : (

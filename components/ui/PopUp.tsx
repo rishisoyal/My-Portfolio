@@ -43,7 +43,7 @@ export default function Popup({ isOpen, onClose, children }: Props) {
               <div className="w-full flex items-center justify-end">
                 <button
                   onClick={onClose}
-                  className="cursor-pointer opacity-70 hover:opacity-100 transition-all duration-200"
+                  className="cursor-pointer sm:cursor-none opacity-70 hover:opacity-100 transition-all duration-200"
                   title="Close Card"
                 >
                   <AiOutlineCloseCircle size={30} />

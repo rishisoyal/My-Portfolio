@@ -25,7 +25,7 @@ const ExperienceEducation = () => {
 
   return (
     <div className="w-full flex items-center justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-3 sm:p-8 w-full lg:w-300 place-items-center">
+      <div className="width-transition grid grid-cols-1 lg:grid-cols-2 gap-6 p-3 sm:p-8 w-full lg:w-300 place-items-center">
         {experienceEducation.map((data, i) => (
           <div
             key={i}

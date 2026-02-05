@@ -6,6 +6,10 @@
   color: whitesmoke;
 }
 
+.width-transition {
+  transition: width 0.5s ease-in-out 1;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,7 +23,7 @@ body {
 html {
   color: black !important;
   background-color: #dce0e8 !important;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 html.dark {
@@ -28,15 +32,26 @@ html.dark {
 }
 
 p {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .primary-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  gap: .3rem;
+  cursor: none;
+  gap: 0.3rem;
   padding: 1rem;
   overflow: hidden;
   margin-top: 16px;
@@ -44,7 +59,12 @@ p {
   background: transparent;
   width: 15rem;
   border: 2px solid #5160b2;
-  transition: all .5s;
+  transition: all 0.5s;
+}
+
+/* use custom cursor */
+a {
+  cursor: none;
 }
 
 .primary-btn span {
@@ -52,14 +72,14 @@ p {
 }
 
 .primary-btn::before {
-  content: '';
+  content: "";
   width: 100%;
   background-color: #7287fd;
   position: absolute;
   inset: 0;
   z-index: -1;
   transform: translateX(100%);
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 html.dark .primary-btn::before {
@@ -96,7 +116,6 @@ html.dark .primary-btn {
 
 #hero-img img {
   border-radius: 30px;
-
 }
 
 @media (max-width: 1024px) {
@@ -109,7 +128,7 @@ html.dark .primary-btn {
 
 #hero-img::before,
 #hero-img::after {
-  content: '';
+  content: "";
   display: flex;
   width: 100%;
   height: 100%;
@@ -123,11 +142,17 @@ html.dark .primary-btn {
 }
 
 #hero-img::after {
-  background: conic-gradient(from calc(var(--angle) + 100deg), transparent 70%, #5160b2, transparent);
+  background: conic-gradient(from calc(var(--angle) + 100deg),
+      transparent 70%,
+      #5160b2,
+      transparent);
 }
 
 #hero-img::before {
-  background: conic-gradient(from calc(var(--angle) - 90deg), transparent 70%, #5160b2, transparent);
+  background: conic-gradient(from calc(var(--angle) - 90deg),
+      transparent 70%,
+      #5160b2,
+      transparent);
 }
 
 @keyframes border-spin {
@@ -140,9 +165,18 @@ html.dark .primary-btn {
   }
 }
 
-@media (max-width : 720px) {
+input[type="text"], textarea{
+  cursor: none;
+}
+
+@media (max-width: 640px) {
   body {
     cursor: default;
+  }
+
+  a,
+  .primary-btn {
+    cursor: pointer;
   }
 
   #cursor,
