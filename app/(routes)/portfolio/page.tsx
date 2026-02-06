@@ -16,8 +16,8 @@ export default function Page() {
               MY<span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">PORTFOLIOS</span>
             </h1>
           </div>
-          <div className="w-full">
-            <div className="w-full flex items-center justify-center p-4 py-8">
+          <div className="w-full py-8">
+            {/* <div className="w-full flex items-center justify-center p-4 py-8">
               <ul className="flex gap-4 text-[18px]">
                 <li className="cursor-pointer sm:cursor-none hover:text-[#5160b2] transition-colors duration-500 ease-in-out">
                   All
@@ -29,7 +29,7 @@ export default function Page() {
                   Apps
                 </li>
               </ul>
-            </div>
+            </div> */}
             <Projects />
           </div>
         </section>

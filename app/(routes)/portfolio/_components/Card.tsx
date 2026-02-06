@@ -1,3 +1,6 @@
+"use client";
+
+import { useCursor } from "@/store";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { IoCodeSlash } from "react-icons/io5";
@@ -5,6 +8,8 @@ import Image from "next/image";
 import { Portfolio } from "../types/portfolio.type";
 
 export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
+  const { customCursorOn } = useCursor();
+
   return (
     <>
       <div className="w-full md:w-160 h-max">
@@ -12,14 +17,21 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
           <h2 className="text-[#5160b2]">{portfolio.name}</h2>
         </div>
         {/* Info section */}
-        <div className="p-4 flex flex-col ga-4 text-sm sm:text-[1rem]">
+        <div className="py-4 flex flex-col ga-4 text-sm sm:text-[1rem]">
           <div className="flex flex-wrap">
-            <div className="flex items-center gap-2 p-2">
+            <div className="flex items-center gap-2 p-2 max-w-full">
               <span className="p-2 bg-gray-300 dark:bg-gray-700 rounded-full">
                 <IoCodeSlash />{" "}
               </span>
               <span className="text-nowrap">Tech Stack: </span>
-              <strong className="text-[#5160b2] min-w-max dark:text-[#cdd6f4] flex flex-wrap">
+              <strong
+                onWheel={(e) => {
+                  e.preventDefault();
+                  e.currentTarget.scrollLeft += e.deltaY;
+                }}
+                className="text-[#5160b2] text-nowrap dark:text-[#cdd6f4] flex max-w-full overflow-x-auto scroll-smooth text-scrollbar"
+                title="Use Wheel To Scroll"
+              >
                 {portfolio.techStack?.join(", ")}
               </strong>
             </div>
@@ -32,7 +44,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
                 <a
                   href={portfolio.public_url}
                   target="_blank"
-                  className=" text-[#5160b2] underline"
+                  className={`text-[#5160b2] underline ${customCursorOn ? "cursor-none" : "cursor-pointer"}`}
                 >
                   <strong>Check out the app</strong>
                 </a>
@@ -46,7 +58,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
               <a
                 href={portfolio.github}
                 target="_blank"
-                className=" text-[#5160b2] underline"
+                className={`text-[#5160b2] underline ${customCursorOn ? "cursor-none" : "cursor-pointer"}`}
               >
                 <strong>View the code</strong>
               </a>
@@ -59,7 +71,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
               </span>
               About this project:
             </div>
-            <p className="text-[#5160b2] text-left w-full dark:text-[#cdd6f4]">
+            <p className="pt-2 text-[#5160b2] text-left w-full dark:text-[#cdd6f4]">
               {portfolio.desc}
             </p>
           </div>

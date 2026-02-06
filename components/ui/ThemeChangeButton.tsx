@@ -1,22 +1,28 @@
-'use client'
+"use client";
 
-import { FaMoon, FaSun } from 'react-icons/fa'
-import { useTheme } from '@/store/themeStore'
+import { FaMoon, FaSun } from "react-icons/fa";
+import { useTheme, useCursor } from "@/store";
 
 const ThemeChangeButton = () => {
-  const { isDark, toggleTheme } = useTheme()
+  const { isDark, toggleTheme } = useTheme();
+  const { customCursorOn } = useCursor();
 
   return (
-    <div className="fixed top-0 w-full z-99 flex items-end justify-end right-0 p-4">
-      <button id="theme-btn" className="cursor-pointer sm:cursor-none" onClick={toggleTheme}>
+    <div>
+      <button
+        id="theme-btn"
+        className={`p-2 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 ${customCursorOn ? "cursor-none" : "cursor-pointer"}`}
+        onClick={toggleTheme}
+        title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+      >
         {isDark ? (
-          <FaSun size={25} color="#5160b2" />
+          <FaSun />
         ) : (
-          <FaMoon size={25} color="#5160b2" />
+          <FaMoon />
         )}
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default ThemeChangeButton
+export default ThemeChangeButton;

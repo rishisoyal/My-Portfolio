@@ -1,3 +1,4 @@
+import PrimaryButton from "@/components/ui/PrimaryButton";
 import Image from "next/image";
 import Link from "next/link";
 import { ImArrowRight2 } from "react-icons/im";
@@ -48,12 +49,10 @@ export default function Page() {
               </div>
               <div className="w-full px-4 flex items-center  justify-center lg:justify-start">
                 <Link href="/about" className="w-max h-max">
-                  <button className="rounded-full primary-btn before:rounded-full">
-                    <span className="font-semibold">MORE ABOUT ME</span>
-                    <span className="absolute right-0 rounded-full bg-[#7287fd] dark:bg-[#5160b2] w-14 h-14 flex items-center justify-center text-xl">
-                      <ImArrowRight2 size={25} />
-                    </span>
-                  </button>
+                  <PrimaryButton
+                    content="MORE ABOUT ME"
+                    icon={<ImArrowRight2 size={25} />}
+                  />
                 </Link>
               </div>
             </div>

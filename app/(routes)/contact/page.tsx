@@ -1,12 +1,7 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaMap,
-  FaPhoneAlt,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaMap, FaPhoneAlt } from "react-icons/fa";
 import { IoMdMailOpen } from "react-icons/io";
 import { Form } from "./_components";
+import Socials from "./_components/Socials";
 
 export default function Page() {
   return (
@@ -20,7 +15,10 @@ export default function Page() {
               CONTACT
             </div>
             <h1 className="text-4xl sm:text-6xl flex items-center justify-center font-bold w-full h-full">
-              GET IN<span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">TOUCH</span>
+              GET IN
+              <span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">
+                TOUCH
+              </span>
             </h1>
           </div>
           <div className="w-full p-1 lg:p-12 animate__animated animate__fadeInUp">
@@ -83,39 +81,8 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-                {/* Social media */}
-                <div className="socials flex gap-4 py-2">
-                  <span>
-                    <a
-                      href="https://github.com/rishisoyal"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0px_0px_30px_#5160b2]"
-                    >
-                      <FaGithub size={20} />
-                    </a>
-                  </span>
-                  <span>
-                    <a
-                      href="https://www.linkedin.com/in/rishisoyal"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0px_0px_30px_#5160b2]"
-                    >
-                      <FaLinkedin size={20} />
-                    </a>
-                  </span>
-                  <span>
-                    <a
-                      href="https://www.youtube.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-gray-300 dark:bg-[#313244] rounded-full grid place-content-center hover:bg-[#7287fd] dark:hover:bg-[#5160b2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0px_0px_30px_#5160b2]"
-                    >
-                      <FaYoutube size={20} />
-                    </a>
-                  </span>
-                </div>
+                {/* Social media links*/}
+                <Socials />
               </div>
               {/* Right section */}
               <div className="flex w-full lg:w-180 min-h-full">

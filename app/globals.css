@@ -1,6 +1,18 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* @utility text-scrollbar {
+  @apply [scrollbar-width:1px] [&::-webkit-scrollbar]:1px;
+}
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+} */
+
+*{
+  scroll-behavior: smooth;
+}
+
 ::selection {
   background-color: #5160b2;
   color: whitesmoke;
@@ -13,9 +25,6 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
-  /* background-color: #dce0e8; */
-  /* color: black; */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -50,7 +59,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: none;
   gap: 0.3rem;
   padding: 1rem;
   overflow: hidden;
@@ -60,11 +68,6 @@ p {
   width: 15rem;
   border: 2px solid #5160b2;
   transition: all 0.5s;
-}
-
-/* use custom cursor */
-a {
-  cursor: none;
 }
 
 .primary-btn span {
@@ -165,22 +168,3 @@ html.dark .primary-btn {
   }
 }
 
-input[type="text"], textarea{
-  cursor: none;
-}
-
-@media (max-width: 640px) {
-  body {
-    cursor: default;
-  }
-
-  a,
-  .primary-btn {
-    cursor: pointer;
-  }
-
-  #cursor,
-  #trail {
-    display: none;
-  }
-}

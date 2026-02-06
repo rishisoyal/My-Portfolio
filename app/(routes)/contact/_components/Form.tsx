@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme, useToast } from "@/store";
+import { useTheme, useToast, useCursor } from "@/store";
 import type { ChangeEvent, SubmitEvent } from "react";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
@@ -11,6 +11,7 @@ import { Tooltip, TooltipProps } from "@mui/material";
 type FormErrors = Partial<Record<keyof ContactForm, string>>;
 
 const Form = () => {
+  const { customCursorOn } = useCursor();
   const { showToast } = useToast();
   const isDark = useTheme((s) => s.isDark);
   const [formData, setFormData] = useState<ContactForm>({
@@ -106,7 +107,7 @@ const Form = () => {
         color: isDark ? "#fff" : "#000",
         fontSize: "14px",
         border: "1px solid #d20f39",
-        cursor: "none"
+        cursor: "none",
       },
     },
     arrow: {
@@ -134,7 +135,7 @@ const Form = () => {
               name="name"
               id="name"
               placeholder="YOUR NAME"
-              className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.name ? "border-[#d20f3982]" : "border-transparent"}`}
+              className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.name ? "border-[#d20f3982]" : "border-transparent"} ${customCursorOn ? "cursor-none" : "cursor-input"}`}
             />
           </Tooltip>
           <Tooltip
@@ -150,7 +151,7 @@ const Form = () => {
               name="email"
               id="email"
               placeholder="YOUR EMAIL"
-              className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.email ? "border-[#d20f3982]" : "border-transparent"}`}
+              className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.email ? "border-[#d20f3982]" : "border-transparent"} ${customCursorOn ? "cursor-none" : "cursor-input"}`}
             />
           </Tooltip>
         </div>
@@ -168,7 +169,7 @@ const Form = () => {
               name="subject"
               id="subject"
               placeholder="YOUR SUBJECT"
-              className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.subject ? "border-[#d20f3982]" : "border-transparent"}`}
+              className={`p-3 sm:py-4 px-6 rounded-full bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.subject ? "border-[#d20f3982]" : "border-transparent"} ${customCursorOn ? "cursor-none" : "cursor-input"}`}
             />
           </Tooltip>
         </div>
@@ -185,7 +186,7 @@ const Form = () => {
               name="message"
               id="message"
               placeholder="YOUR MESSAGE"
-              className={`p-3 sm:py-4 px-6 rounded-4xl bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] min-h-40 border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.message ? "border-[#d20f3982]" : "border-transparent"}`}
+              className={`p-3 sm:py-4 px-6 rounded-4xl bg-gray-300 dark:bg-[#313244] text-black dark:text-white w-full outline-none text-[14px] sm:text-[16px] min-h-40 border-2 focus:border-[#5160b2] transition-border duration-200 ${!!formError.message ? "border-[#d20f3982]" : "border-transparent"} ${customCursorOn ? "cursor-none" : "cursor-input"}`}
               rows={5}
             ></textarea>
           </Tooltip>
@@ -206,7 +207,7 @@ const Form = () => {
         >
           <button
             type="submit"
-            className="primary-btn rounded-full before:rounded-full"
+            className={`primary-btn rounded-full before:rounded-full ${customCursorOn ? "cursor-none" : "cursor-pointer"}`}
           >
             <span className="font-semibold">SEND MESSAGE</span>
             <span
