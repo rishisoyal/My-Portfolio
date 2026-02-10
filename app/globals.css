@@ -9,8 +9,10 @@
   @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 } */
 
-*{
+* {
   scroll-behavior: smooth;
+  scrollbar-width: 4px;
+  scrollbar-color: #313244;
 }
 
 ::selection {
@@ -93,12 +95,14 @@ html.dark .primary-btn {
   border: 2px solid #5160b2;
 }
 
-.primary-btn:hover {
-  transform: translateX(12px);
-}
+@media (min-width: 640px) {
+  .primary-btn:hover {
+    transform: translateX(12px);
+  }
 
-.primary-btn:hover::before {
-  transform: translateX(0%);
+  .primary-btn:hover::before {
+    transform: translateX(0%);
+  }
 }
 
 @property --angle {
@@ -167,4 +171,3 @@ html.dark .primary-btn {
     --angle: 360deg;
   }
 }
-

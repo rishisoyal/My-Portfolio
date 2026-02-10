@@ -12,10 +12,10 @@ export const useCursor = create<State & Action>((set, get) => ({
   customCursorOn: true,
   toggleCursor: () => {
     if (get().customCursorOn) {
-      set((s) => ({ ...s, customCursorOn: false }));
+      set({ customCursorOn: false });
       localStorage.setItem("cursor", "default");
     } else {
-      set((s) => ({ ...s, customCursorOn: true }));
+      set({ customCursorOn: true });
       localStorage.setItem("cursor", "custom");
     }
   },

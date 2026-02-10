@@ -18,9 +18,9 @@ export const useToast = create<State & Action>((set) => ({
   severity: "success",
   message: "",
   showToast: (severity, message) => {
-    set((s) => ({ ...s, severity: severity, message, open: true }));
+    set({ severity: severity, message, open: true });
   },
   hideToast: () => {
-    set((s) => ({ ...s, open: false }));
+    set({ open: false });
   },
 }));

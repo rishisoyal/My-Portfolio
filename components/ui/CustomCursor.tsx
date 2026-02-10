@@ -16,14 +16,8 @@ export default function CustomCursor() {
     function isCursorScaleTarget(el: Element | null) {
       if (!el) return false;
       const tag = el.tagName;
-      if (
-        tag === "INPUT" ||
-        tag === "TEXTAREA" ||
-        tag === "SELECT" ||
-        tag === "A" ||
-        tag === "BUTTON"
-      )
-        return true;
+      const targetElements = ["INPUT", "TEXTAREA", "SELECT", "A", "BUTTON"];
+      if (targetElements.includes(tag)) return true;
       try {
         return !!el.closest && !!el.closest("[data-cursor-scale]");
       } catch {
