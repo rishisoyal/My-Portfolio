@@ -64,7 +64,7 @@ p {
   gap: 0.3rem;
   padding: 1rem;
   overflow: hidden;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   position: relative;
   background: transparent;
   width: 15rem;

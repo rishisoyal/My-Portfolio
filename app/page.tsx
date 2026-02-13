@@ -1,12 +1,11 @@
 "use client";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import { useCursor } from "@/store";
 import Image from "next/image";
-import Link from "next/link";
 import { ImArrowRight2 } from "react-icons/im";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
-  const { customCursorOn } = useCursor();
+  const router = useRouter();
 
   return (
     <>
@@ -51,16 +50,14 @@ export default function Page() {
                   those around me.
                 </p>
               </div>
-              <div className="w-full px-4 flex items-center justify-center lg:justify-start">
-                <Link
-                  href="/about"
-                  className={`w-max h-max ${customCursorOn ? "cursor-none" : "cursor-pointer"}`}
-                >
-                  <PrimaryButton
-                    content="MORE ABOUT ME"
-                    icon={<ImArrowRight2 size={25} />}
-                  />
-                </Link>
+              <div className="w-full py-4 px-4 flex items-center justify-center lg:justify-start">
+                <PrimaryButton
+                  content="MORE ABOUT ME"
+                  icon={<ImArrowRight2 size={25} />}
+                  onClick={() => {
+                    router.push("/about");
+                  }}
+                />
               </div>
             </div>
           </div>

@@ -203,7 +203,7 @@ const Form = () => {
           />
         </div>
         <div
-          className={`w-full px-4 flex flex-col md:flex-row ${loading && "pointer-events-none opacity-50"}`}
+          className={`w-full p-4 flex flex-col md:flex-row ${loading && "pointer-events-none opacity-50"}`}
         >
           <button
             type="submit"
