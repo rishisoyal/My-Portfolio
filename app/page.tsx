@@ -1,9 +1,13 @@
+"use client";
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import { useCursor } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
 import { ImArrowRight2 } from "react-icons/im";
 
 export default function Page() {
+  const { customCursorOn } = useCursor();
+
   return (
     <>
       <title>Rishi Soyal - Home</title>
@@ -47,8 +51,11 @@ export default function Page() {
                   those around me.
                 </p>
               </div>
-              <div className="w-full px-4 flex items-center  justify-center lg:justify-start">
-                <Link href="/about" className="w-max h-max">
+              <div className="w-full px-4 flex items-center justify-center lg:justify-start">
+                <Link
+                  href="/about"
+                  className={`w-max h-max ${customCursorOn ? "cursor-none" : "cursor-pointer"}`}
+                >
                   <PrimaryButton
                     content="MORE ABOUT ME"
                     icon={<ImArrowRight2 size={25} />}
@@ -63,4 +70,3 @@ export default function Page() {
     </>
   );
 }
-

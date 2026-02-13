@@ -28,7 +28,7 @@ export default function Page() {
                 {/* Main text */}
                 <div className="flex flex-col gap-2">
                   <div className="text-3xl font-bold w-full flex items-center justify-start py-2">
-                    <h2>DON&apos;T BE SHY!</h2>
+                    <h2>DON&#39;T BE SHY!</h2>
                   </div>
                   <p className="text-left text-wrap dark:text-[#cdd6f4] text-shadow-[0px_0px_30px_#5160b2]">
                     Feel free to get in touch with me. I am always open to

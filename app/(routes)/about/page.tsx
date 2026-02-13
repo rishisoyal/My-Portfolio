@@ -16,7 +16,10 @@ export default function Page() {
               RESUME
             </div>
             <h1 className="text-4xl sm:text-6xl flex items-center justify-center font-bold w-full h-full">
-              ABOUT<span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">ME</span>
+              ABOUT
+              <span className="text-[#5160b2] px-4 text-shadow-[0px_0px_50px_#7287fd]">
+                ME
+              </span>
             </h1>
           </div>
           <div className="flex flex-col lg:flex-row justify-center p-3 sm:p-8 w-full gap-2">
@@ -70,7 +73,9 @@ export default function Page() {
                       <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
                         Phone:
                       </span>
-                      <span className="">+91 6367830221</span>
+                      <a href="tel:+91 6367830221">
+                        +91 6367830221
+                      </a>{" "}
                     </div>
                     <div className="flex flex-col sm:flex-row sm:gap-1 flex-wrap">
                       <span className="text-[#7287fd] dark:text-[#cdd6f4] text-shadow-[0px_0px_10px_#7287fd]">
