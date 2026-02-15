@@ -1,142 +1,82 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const trailRef = useRef<HTMLDivElement>(null);
-  const scaleRef = useRef(1);
-  const lastPos = useRef({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const scale = useMotionValue(1);
+
+  // "Spring" version for the trail (smoother than CSS transitions)
+  const springConfig = { damping: 25, stiffness: 200 };
+  const trailX = useSpring(mouseX, springConfig);
+  const trailY = useSpring(mouseY, springConfig);
+
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let hasShown = false;
+    const move = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+      if (!visible) setVisible(true);
+    };
 
-    function isCursorScaleTarget(el: Element | null) {
-      if (!el) return false;
-      const tag = el.tagName;
-      const targetElements = ["INPUT", "TEXTAREA", "SELECT", "A", "BUTTON"];
-      if (targetElements.includes(tag)) return true;
-      try {
-        return !!el.closest && !!el.closest("[data-cursor-scale]");
-      } catch {
-        return false;
+    const handleDown = () => scale.set(1.5);
+    const handleUp = () => scale.set(1);
+
+    const handleOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest?.("button, a, input, [data-cursor-scale]")) {
+        scale.set(1.5);
       }
-    }
+    };
 
-    function move(e: MouseEvent) {
-      const x = e.clientX;
-      const y = e.clientY;
+    const handleOut = () => scale.set(1);
 
-      if (!hasShown) {
-        hasShown = true;
-        setVisible(true);
-      }
-
-      lastPos.current = { x, y };
-
-      cursorRef.current?.style.setProperty(
-        "transform",
-        `translate3d(${x}px, ${y}px, 0)`,
-      );
-
-      trailRef.current?.style.setProperty(
-        "transform",
-        `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
-      );
-    }
-
-    function hide() {
-      setVisible(false);
-      hasShown = false;
-    }
-
-    function handleMouseOut(e: MouseEvent) {
-      if (!e.relatedTarget) {
-        hide();
-      }
-    }
-
-    function handleMouseDown() {
-      scaleRef.current = 1.2;
-      const { x, y } = lastPos.current;
-      trailRef.current?.style.setProperty(
-        "transform",
-        `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
-      );
-    }
-
-    function handleMouseUp() {
-      scaleRef.current = 1;
-      const { x, y } = lastPos.current;
-      trailRef.current?.style.setProperty(
-        "transform",
-        `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
-      );
-    }
-
-    function handleElementOver(e: MouseEvent) {
-      const el = e.target as Element | null;
-      if (isCursorScaleTarget(el)) {
-        scaleRef.current = 1.2;
-        const { x, y } = lastPos.current;
-        trailRef.current?.style.setProperty(
-          "transform",
-          `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
-        );
-      }
-    }
-
-    function handleElementOut(e: MouseEvent) {
-      const el = e.target as Element | null;
-      if (isCursorScaleTarget(el)) {
-        scaleRef.current = 1;
-        const { x, y } = lastPos.current;
-        trailRef.current?.style.setProperty(
-          "transform",
-          `translate3d(${x}px, ${y}px, 0) scale(${scaleRef.current})`,
-        );
-      }
-    }
-
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
-    window.addEventListener("mouseover", handleElementOver);
-    window.addEventListener("mouseout", handleElementOut);
     window.addEventListener("mousemove", move);
-    window.addEventListener("mouseout", handleMouseOut);
-    window.addEventListener("blur", hide);
+    window.addEventListener("mousedown", handleDown);
+    window.addEventListener("mouseup", handleUp);
+    window.addEventListener("mouseover", handleOver);
+    window.addEventListener("mouseout", handleOut);
 
     return () => {
       window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseout", handleMouseOut);
-      window.removeEventListener("blur", hide);
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
-      window.removeEventListener("mouseover", handleElementOver);
-      window.removeEventListener("mouseout", handleElementOut);
+      window.removeEventListener("mousedown", handleDown);
+      window.removeEventListener("mouseup", handleUp);
+      window.removeEventListener("mouseover", handleOver);
+      window.removeEventListener("mouseout", handleOut);
     };
-  }, []);
+  }, [mouseX, mouseY, scale, visible]);
 
   return (
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="pointer-events-none fixed inset-0 z-99"
+          className="pointer-events-none fixed inset-0 z-999"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <div
-            ref={cursorRef}
-            className="fixed w-2 h-2 rounded-full bg-[#5160b2] -translate-1/2 z-90"
-            id="cursor"
+          {/* Main Dot: Follows mouse exactly */}
+          <motion.div
+            className="fixed w-2 h-2 rounded-full bg-[#5160b2] -translate-x-1/2 -translate-y-1/2"
+            style={{ x: mouseX, y: mouseY }}
           />
-          <div
-            ref={trailRef}
-            className="fixed w-10 h-10 rounded-full bg-[#5160b2ae] opacity-70 -translate-1/2 z-99 transition-transform duration-500 ease-out"
-            id="trail"
+
+          {/* Trail: Follows mouse with a spring physics "lag" */}
+          <motion.div
+            className="fixed w-10 h-10 rounded-full bg-[#5160b2ae] transition-transform duration-500 ease-out opacity-70 -translate-x-1/2 -translate-y-1/2"
+            style={{
+              x: trailX,
+              y: trailY,
+              scale: scale,
+            }}
           />
         </motion.div>
       )}
